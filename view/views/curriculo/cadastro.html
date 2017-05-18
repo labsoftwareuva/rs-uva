@@ -1,0 +1,165 @@
+<div class="animated fadeIn" ng-controller="CurriculoCtrl">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <strong>Incluir Curriculo</strong>
+                </div>
+                <div class="card-block">
+                    <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+
+                        <p><strong><em>Dados pessoais</em></strong></p>
+                        
+                        <div class="form-group row">
+                        
+                        	<!-- E-mail -->
+                            <label class="col-md-1 form-control-label" for="curriculo-email">E-mail</label>
+                            <div class="col-md-4">
+                              <input type="text" id="curriculo-email" name="curriculo-email" class="form-control">
+                            </div>                        
+                        
+	                        <!-- Senha -->
+	                        
+                            <label class="col-md-1 form-control-label" for="curriculo-senha">Senha</label>
+                            <div class="col-md-2">
+                              <input type="password" id="curriculo-senha" name="curriculo-senha" class="form-control">
+                            </div>
+	                        
+                        
+	                        <!-- Repetir Senha-->
+                            <label class="col-md-2 form-control-label" for="curriculo-senha2">Repetir Senha</label>
+                            <div class="col-md-2">
+                              <input type="password" id="curriculo-senha2" name="curriculo-senha2" class="form-control">
+                            </div>	                        
+	                        
+	            		</div>
+	            		
+	            		<div class="form-group row">
+	            		
+	            			<!-- Nome -->
+                            <label class="col-md-1 form-control-label" for="curriculo-nome">Nome</label>
+                            <div class="col-md-7">
+                              <input type="text" id="curriculo-nome" name="curriculo-nome" class="form-control">
+                            </div>
+                            
+                            <!-- Data nascimento -->
+                            <label class="col-md-2 form-control-label" for="curriculo-nascimento">Data de nascimento</label>
+                            <div class="col-md-2">
+                              <input type="text" id="curriculo-nascimento" name="curriculo-nascimento" class="form-control">
+                            </div>
+	            			
+	            		</div>
+	            		
+	            		<div class="form-group row">
+                            
+                            <!-- CPF -->
+                            <label class="col-md-1 form-control-label" for="curriculo-cpf">CPF</label>
+                            <div class="col-md-4">
+                              <input type="text" id="curriculo-nascimento" name="curriculo-nascimento" class="form-control">
+                            </div>
+                            
+                            <!-- RG -->
+                            <label class="col-md-1 form-control-label" for="curriculo-rg">RG</label>
+                            <div class="col-md-2">
+                              <input type="text" id="curriculo-rg" name="curriculo-rg" class="form-control">
+                            </div>
+                            
+                            <!-- Orgao emissor -->
+                            <label class="col-md-2 form-control-label" for="curriculo-rg-emissor">&Oacute;rg&atilde;o emissor</label>
+                            <div class="col-md-2">
+                              <input type="text" id="curriculo-rg-emissor" name="curriculo-emissor" class="form-control">
+                            </div>
+	            			
+	            		</div>
+	            		
+	            		<div class="form-group row">
+                            
+                            <!-- Data de emissao -->
+                            <label class="col-md-1 form-control-label" for="curriculo-rg-emissao">Emiss&atilde;o</label>
+                            <div class="col-md-4">
+                              <input type="text" id="curriculo-rg-emissao" name="curriculo-rg-emissao" class="form-control">
+                            </div>
+                            
+                            <!-- Sexo -->
+                            <label class="col-md-1 form-control-label" for="curriculo-rg">Sexo</label>
+                            <div class="col-md-6">
+                              <select class="form-control">
+                                <option value="">Selecione</option>
+                                <option value="M">Masculino</option>
+                                <option value="F">Feminino</option>
+                              </select>
+                            </div>
+	            			
+	            		</div>
+	            		
+	            		<div class="form-group row">
+	            		
+	            			<!-- CEP -->	                        
+                            <label class="col-md-1 form-control-label" for="curriculo-cep">CEP</label>
+                            <div class="col-md-4">
+                                <input type="text" ng-model="cep" id="curriculo-cep" name="curriculo-cep" class="form-control">
+                            </div>
+                            <div class="col-md-7">
+                                <button type="button" ng-click="findCep(cep)" class="btn btn-primary"><i class="icon-magnified"></i>&nbsp; Busca CEP</button>
+                            </div>
+                            
+                        </div>	                    
+                        
+                        <div class="form-group row">    
+	
+	                        <!-- Endereço -->
+	                        <label class="col-md-1 form-control-label" for="curriculo-endereco">Endere&ccedil;o</label>
+	                        <div class="col-md-7">
+	                        	<input type="text" ng-model="logradouro" id="curriculo-endereco" name="curriculo-endereco" class="form-control">
+	                        </div>	                                       
+	
+	                        <!-- Numero -->	                        
+                            <label class="col-md-2 form-control-label" for="curriculo-endereco-numero">N&uacute;mero</label>
+                            <div class="col-md-2">
+                                <input type="text" id="curriculo-endereco-numero" name="curriculo-endereco-numero" class="form-control">
+                            </div>	                        
+	                        
+	                    </div>
+	                    
+	                    <div class="form-group row">
+	
+	                        <!-- Complemento -->	                        
+                            <label class="col-md-1 form-control-label" for="curriculo-endereco-complemento">Complemento</label>
+                            <div class="col-md-4">
+                                <input type="text" id="curriculo-endereco-complemento" name="curriculo-endereco-complemento" class="form-control">
+                            </div>	                        
+	
+	                        <!-- Bairro -->	                        
+                            <label class="col-md-1 form-control-label" for="curriculo-endereco-bairro">Bairro</label>
+                            <div class="col-md-6">
+                                <input type="text" ng-model="bairro" id="curriculo-endereco-bairro" name="curriculo-endereco-bairro" class="form-control">
+                            </div>	                        
+	                        
+	                    </div>
+	                    <div class="form-group row">
+	
+	                        <!-- Municipio -->	                        
+                            <label class="col-md-1 form-control-label" for="curriculo-endereco-municipio">Munic&iacute;pio</label>
+                            <div class="col-md-4">
+                                <input type="text" ng-model="localidade" id="curriculo-endereco-municipio" name="curriculo-endereco-municipio" class="form-control">
+                            </div>	                        
+	
+	                        <!-- UF -->	                        
+                            <label class="col-md-1 form-control-label" for="curriculo-endereco-uf">UF</label>
+                            <div class="col-md-6">
+                                <input type="text" ng-model="uf" id="curriculo-endereco-uf" name="curriculo-endereco-uf" class="form-control">
+                            </div>                        
+	            		
+	            		</div>
+	            		
+	            	</form>
+                        
+                </div>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Confirmar</button>
+                    <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Cancelar</button>
+                </div>
+            </div>
+    	</div>    
+	</div>
+</div>
