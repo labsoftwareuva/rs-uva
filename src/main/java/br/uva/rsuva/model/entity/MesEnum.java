@@ -1,4 +1,4 @@
-package br.uva.rsuva.model;
+package br.uva.rsuva.model.entity;
 
 public enum MesEnum {
 	

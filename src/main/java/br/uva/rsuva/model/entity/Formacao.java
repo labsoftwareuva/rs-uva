@@ -1,6 +1,6 @@
-package br.uva.rsuva.model.bean;
-import br.uva.rsuva.model.CursoEnum;
-import br.uva.rsuva.model.MesEnum;
+package br.uva.rsuva.model.entity;
+import br.uva.rsuva.model.entity.CursoEnum;
+import br.uva.rsuva.model.entity.MesEnum;
 
 public class Formacao {
 	

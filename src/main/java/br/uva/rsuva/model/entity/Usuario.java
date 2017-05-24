@@ -1,4 +1,4 @@
-package br.uva.rsuva.model.bean;
+package br.uva.rsuva.model.entity;
 
 public class Usuario {
 
