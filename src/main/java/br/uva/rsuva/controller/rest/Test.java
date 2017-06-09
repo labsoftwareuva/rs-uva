@@ -9,7 +9,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 @Path("/teste")
-public class Test2 {
+public class Test {
 	 	
 		@GET
 	    @Produces("application/json")
