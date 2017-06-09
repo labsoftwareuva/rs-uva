@@ -1,0 +1,13 @@
+package br.uva.rsuva.model.entity;
+
+public enum TipoCursoEnum {
+	
+	CURSO_TECNICO,
+	GRADUACAO,
+	POS_GRADUACAO,
+	POS_GRADUAÇAO_MBA,
+	POS_GRADUACAO_MESTRADO,
+	POS_GRADUACAO_DOUTORADO,
+	CURSOS_COMPLEMENTARES
+	
+}

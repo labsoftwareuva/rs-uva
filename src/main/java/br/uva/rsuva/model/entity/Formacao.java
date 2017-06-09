@@ -4,74 +4,93 @@ import br.uva.rsuva.model.entity.MesEnum;
 
 public class Formacao {
 	
-	private Long Id;
-	private CursoEnum Curso;
-	private String EstadoAtual;
-	private String Outros;	
-	private MesEnum MesConclusao;	
-	private int AnoConclusao;
-	private String Estado;
-	private String Pais;
+	private int id;
+	private CursoEnum curso;
+	private String estadoAtual;
+	private String outros;	
+	private MesEnum mesConclusao;	
+	private int anoConclusao;
+	private String estado;
+	private String pais;
 	
-	public Formacao(){}	
-	public Formacao(Long id, CursoEnum curso, String estadoAtual, String outros, MesEnum mesConclusao, int anoConclusao,
-			String estado, String pais) {		
-		Id = id;
-		Curso = curso;
-		EstadoAtual = estadoAtual;
-		Outros = outros;
-		MesConclusao = mesConclusao;
-		AnoConclusao = anoConclusao;
-		Estado = estado;
-		Pais = pais;
+	public Formacao(){}
+
+	public Formacao(int id, CursoEnum curso, String estadoAtual, String outros, MesEnum mesConclusao, int anoConclusao,
+			String estado, String pais) {
+		this.id = id;
+		this.curso = curso;
+		this.estadoAtual = estadoAtual;
+		this.outros = outros;
+		this.mesConclusao = mesConclusao;
+		this.anoConclusao = anoConclusao;
+		this.estado = estado;
+		this.pais = pais;
 	}
-	public Long getId() {
-		return Id;
+
+	public int getId() {
+		return id;
 	}
-	public void setId(Long id) {
-		Id = id;
+
+	public void setId(int id) {
+		this.id = id;
 	}
+
 	public CursoEnum getCurso() {
-		return Curso;
+		return curso;
 	}
+
 	public void setCurso(CursoEnum curso) {
-		Curso = curso;
+		this.curso = curso;
 	}
+
 	public String getEstadoAtual() {
-		return EstadoAtual;
+		return estadoAtual;
 	}
+
 	public void setEstadoAtual(String estadoAtual) {
-		EstadoAtual = estadoAtual;
+		this.estadoAtual = estadoAtual;
 	}
+
 	public String getOutros() {
-		return Outros;
+		return outros;
 	}
+
 	public void setOutros(String outros) {
-		Outros = outros;
+		this.outros = outros;
 	}
+
 	public MesEnum getMesConclusao() {
-		return MesConclusao;
+		return mesConclusao;
 	}
+
 	public void setMesConclusao(MesEnum mesConclusao) {
-		MesConclusao = mesConclusao;
+		this.mesConclusao = mesConclusao;
 	}
+
 	public int getAnoConclusao() {
-		return AnoConclusao;
+		return anoConclusao;
 	}
+
 	public void setAnoConclusao(int anoConclusao) {
-		AnoConclusao = anoConclusao;
+		this.anoConclusao = anoConclusao;
 	}
+
 	public String getEstado() {
-		return Estado;
+		return estado;
 	}
+
 	public void setEstado(String estado) {
-		Estado = estado;
+		this.estado = estado;
 	}
+
 	public String getPais() {
-		return Pais;
+		return pais;
 	}
+
 	public void setPais(String pais) {
-		Pais = pais;
-	}
+		this.pais = pais;
+	}	
+
+	
 	
 }
