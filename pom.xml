@@ -116,7 +116,7 @@
 					<target>1.7</target>
 				</configuration>
 			</plugin>
-			<plugin>
+			<!-- <plugin>
 				<groupId>org.apache.tomcat.maven</groupId>
 				<artifactId>tomcat7-maven-plugin</artifactId>
 				<version>2.1</version>
@@ -126,7 +126,7 @@
 					<username>tomcat</username>
 					<password>pwd</password>					
 				</configuration>
-			</plugin>
+			</plugin> -->
 
 		</plugins>
 

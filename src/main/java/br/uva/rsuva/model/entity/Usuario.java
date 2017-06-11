@@ -8,12 +8,20 @@ public class Usuario {
 	private String email;
 	
 	public Usuario(){}
-
+	
 	public Usuario(int id, String nome, String senha, String email) {
 		this.id = id;
 		this.nome = nome;
 		this.senha = senha;
 		this.email = email;
+	}
+	public Usuario(String nome, String senha, String email) {
+		this.nome = nome;
+		this.senha = senha;
+		this.email = email;
+	}
+	public Usuario(int id) {
+		this.id = id;
 	}
 
 	public int getId() {

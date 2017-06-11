@@ -12,14 +12,12 @@
     "sourceType": "module"
   },
   "rules": {
-    // Possible Errors
     "no-extra-parens": "error",
     "no-prototype-builtins": "off",
     "no-template-curly-in-string": "error",
     "no-unsafe-negation": "error",
     "valid-jsdoc": "error",
 
-    // Best Practices
     "accessor-pairs": "error",
     "array-callback-return": "error",
     "block-scoped-var": "error",
@@ -92,10 +90,8 @@
     "wrap-iife": "error",
     "yoda": "error",
 
-    // Strict Mode
     "strict": "error",
 
-    // Variables
     "init-declarations": "off",
     "no-catch-shadow": "error",
     "no-label-var": "error",
@@ -106,7 +102,6 @@
     "no-undefined": "off",
     "no-use-before-define": "off",
 
-    // Node.js and CommonJS
     "callback-return": "off",
     "global-require": "error",
     "handle-callback-err": "error",
@@ -118,7 +113,6 @@
     "no-restricted-modules": "error",
     "no-sync": "error",
 
-    // Stylistic Issues
     "array-bracket-spacing": "error",
     "block-spacing": "error",
     "brace-style": "error",
@@ -201,7 +195,6 @@
     "unicode-bom": "error",
     "wrap-regex": "off",
 
-    // ECMAScript 6
     "arrow-body-style": "off",
     "arrow-parens": "error",
     "arrow-spacing": "error",
