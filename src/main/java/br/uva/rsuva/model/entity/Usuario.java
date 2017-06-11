@@ -2,44 +2,62 @@ package br.uva.rsuva.model.entity;
 
 public class Usuario {
 
-	private Long Id;
-	private String Nome;
-	private String Senha;	
-	private String Email;
+	private int id;
+	private String nome;
+	private String senha;	
+	private String email;
 	
-	public Usuario(){}	
+	public Usuario(){}
 	
-	public Usuario(Long id, String nome, String senha, String email) {
-		
-		Id = id;
-		Nome = nome;
-		Senha = senha;
-		Email = email;
+	public Usuario(int id, String nome, String senha, String email) {
+		this.id = id;
+		this.nome = nome;
+		this.senha = senha;
+		this.email = email;
+	}
+	public Usuario(String nome, String senha, String email) {
+		this.nome = nome;
+		this.senha = senha;
+		this.email = email;
+	}
+	public Usuario(int id) {
+		this.id = id;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getNome() {
-		return Nome;
+		return nome;
 	}
+
 	public void setNome(String nome) {
-		Nome = nome;
+		this.nome = nome;
 	}
+
 	public String getSenha() {
-		return Senha;
+		return senha;
 	}
+
 	public void setSenha(String senha) {
-		Senha = senha;
+		this.senha = senha;
 	}
-	public Long getID() {
-		return Id;
-	}
-	public void setID(Long id) {
-		Id = id;
-	}
+
 	public String getEmail() {
-		return Email;
+		return email;
 	}
+
 	public void setEmail(String email) {
-		Email = email;
+		this.email = email;
+	}
+
+	public String toString(){
+		return this.nome + " " + this.email + " " + this.senha;
 	}
 	
 }
