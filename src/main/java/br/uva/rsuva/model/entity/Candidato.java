@@ -23,9 +23,9 @@ public class Candidato {
 	private String rg;
 	private String emissor;
 	private GregorianCalendar expedicao;
-	private SexoEnum sexo;
-	private int telefone;
-	private int celular;
+	private char sexo;
+	private String telefone;
+	private String celular;
 	private String uf;
 	
 	public Candidato(){}
@@ -34,8 +34,8 @@ public class Candidato {
 			ArrayList<Formacao> formacoes, ArrayList<FormacaoComplementar> formacoesComplementares,
 			ArrayList<ProcessoSeletivo> processosSeletivos, PerfilPrimario perfil, Usuario usuario, String cpf,
 			String endereco, int numero, String complemento, String cep, String estado, String cidade,
-			GregorianCalendar dataNascimento, String rg, String emissor, GregorianCalendar expedicao, SexoEnum sexo,
-			int telefone, int celular, String uf) {
+			GregorianCalendar dataNascimento, String rg, String emissor, GregorianCalendar expedicao, char sexo,
+			String telefone, String celular, String uf) {
 		this.id = id;
 		this.experienciasProfissionais = experienciasProfissionais;
 		this.formacoes = formacoes;
@@ -59,7 +59,30 @@ public class Candidato {
 		this.celular = celular;
 		this.uf = uf;
 	}
+	
 
+
+	public Candidato(int id, String cpf, String endereco, int numero, String complemento, String cep, String estado,
+			String cidade, GregorianCalendar dataNascimento, String rg, String emissor, GregorianCalendar expedicao,
+			char sexo, String telefone, String celular, String uf) {
+		super();
+		this.id = id;
+		this.cpf = cpf;
+		this.endereco = endereco;
+		this.numero = numero;
+		this.complemento = complemento;
+		this.cep = cep;
+		this.estado = estado;
+		this.cidade = cidade;
+		this.dataNascimento = dataNascimento;
+		this.rg = rg;
+		this.emissor = emissor;
+		this.expedicao = expedicao;
+		this.sexo = sexo;
+		this.telefone = telefone;
+		this.celular = celular;
+		this.uf = uf;
+	}
 
 	public int getId() {
 		return id;
@@ -205,27 +228,27 @@ public class Candidato {
 		this.expedicao = expedicao;
 	}
 
-	public SexoEnum getSexo() {
+	public char getSexo() {
 		return sexo;
 	}
 
-	public void setSexo(SexoEnum sexo) {
+	public void setSexo(char sexo) {
 		this.sexo = sexo;
 	}
 
-	public int getTelefone() {
+	public String getTelefone() {
 		return telefone;
 	}
 
-	public void setTelefone(int telefone) {
+	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
 
-	public int getCelular() {
+	public String getCelular() {
 		return celular;
 	}
 
-	public void setCelular(int celular) {
+	public void setCelular(String celular) {
 		this.celular = celular;
 	}
 

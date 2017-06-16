@@ -13,7 +13,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import br.uva.rsuva.controller.rest.UsuarioEndPoint;
-import br.uva.rsuva.model.UsuarioDAO;
+import br.uva.rsuva.model.dao.UsuarioDAO;
 import br.uva.rsuva.model.entity.Usuario;
 
 @Path("/usuario")

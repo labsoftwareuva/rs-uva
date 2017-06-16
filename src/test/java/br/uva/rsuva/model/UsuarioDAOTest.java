@@ -2,6 +2,7 @@ package br.uva.rsuva.model;
 
 import java.util.ArrayList;
 
+import br.uva.rsuva.model.dao.UsuarioDAO;
 import br.uva.rsuva.model.entity.Usuario;
 
 public class UsuarioDAOTest {
