@@ -202,9 +202,24 @@ angular.module("app").controller("CurriculoCtrl",function($scope, myResource, $r
       $http.post('./rest/candidato/cadastrar', candidato).then(
         function(response) {
             console.log(response, 'res');
+
+            // Limpa variáveis de sessão
+            $scope.session_curriculo_dados_gerais = {};
+            $rootScope.global_curriculo_dados_gerais = {};
+            $scope.session_curriculo_formacao_academica = [];
+            $rootScope.global_curriculo_formacao_academica = [];
+            $scope.session_curriculo_formacao_complementar = [];
+            $rootScope.global_curriculo_formacao_complementar = [];
+            $scope.session_curriculo_experiencia_profissional = [];
+            $rootScope.global_curriculo_experiencia_profissional = [];
+
+            alert('Cuurriculo gravado com sucesso.');
+            location.href = './#!/inicio';
+
     		},
         function(error) {
   			    console.log(error, 'Erro ao conectar ao servico REST.');
+            alert('Erro ao conectar ao servico REST.');
   		});
   }
 
