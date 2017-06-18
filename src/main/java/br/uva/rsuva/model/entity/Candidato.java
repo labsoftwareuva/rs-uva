@@ -2,40 +2,69 @@ package br.uva.rsuva.model.entity;
 
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
+import java.util.List;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class Candidato {
 	
+	@XmlElement
 	private int id;
-	private ArrayList<ExperienciaProfissional> experienciasProfissionais;
-	private ArrayList<Formacao> formacoes;
-	private ArrayList<FormacaoComplementar> formacoesComplementares;
+	@XmlElement
+	private List<ExperienciaProfissional> experienciasProfissionais;
+	@XmlElement
+	private List<Formacao> formacoes;
+	@XmlElement
+	private List<FormacaoComplementar> formacoesComplementares;
 	private ArrayList<ProcessoSeletivo> processosSeletivos;
 	private PerfilPrimario perfil;
+	@XmlElement
 	private Usuario usuario;
+	@XmlElement
 	private String cpf;
+	@XmlElement
 	private String endereco;
-	private int numero;
+	@XmlElement
+	private String numero;
+	@XmlElement
 	private String complemento;
+	@XmlElement
 	private String cep;
+	@XmlElement
 	private String estado;
+	@XmlElement
 	private String cidade;
+	@XmlElement
 	private GregorianCalendar dataNascimento;
+	@XmlElement
 	private String rg;
+	@XmlElement
 	private String emissor;
+	@XmlElement
 	private GregorianCalendar expedicao;
+	@XmlElement
 	private char sexo;
+	@XmlElement
 	private String telefone;
+	@XmlElement
 	private String celular;
+	@XmlElement
 	private String uf;
 	
 	public Candidato(){}
 
-	public Candidato(int id, ArrayList<ExperienciaProfissional> experienciasProfissionais,
-			ArrayList<Formacao> formacoes, ArrayList<FormacaoComplementar> formacoesComplementares,
-			ArrayList<ProcessoSeletivo> processosSeletivos, PerfilPrimario perfil, Usuario usuario, String cpf,
-			String endereco, int numero, String complemento, String cep, String estado, String cidade,
-			GregorianCalendar dataNascimento, String rg, String emissor, GregorianCalendar expedicao, char sexo,
-			String telefone, String celular, String uf) {
+	
+	
+
+
+	public Candidato(int id, List<ExperienciaProfissional> experienciasProfissionais, List<Formacao> formacoes,
+			List<FormacaoComplementar> formacoesComplementares, ArrayList<ProcessoSeletivo> processosSeletivos,
+			PerfilPrimario perfil, Usuario usuario, String cpf, String endereco, String numero, String complemento,
+			String cep, String estado, String cidade, GregorianCalendar dataNascimento, String rg, String emissor,
+			GregorianCalendar expedicao, char sexo, String telefone, String celular, String uf) {
+		super();
 		this.id = id;
 		this.experienciasProfissionais = experienciasProfissionais;
 		this.formacoes = formacoes;
@@ -59,10 +88,12 @@ public class Candidato {
 		this.celular = celular;
 		this.uf = uf;
 	}
-	
 
 
-	public Candidato(int id, String cpf, String endereco, int numero, String complemento, String cep, String estado,
+
+
+
+	public Candidato(int id, String cpf, String endereco, String numero, String complemento, String cep, String estado,
 			String cidade, GregorianCalendar dataNascimento, String rg, String emissor, GregorianCalendar expedicao,
 			char sexo, String telefone, String celular, String uf) {
 		super();
@@ -92,29 +123,6 @@ public class Candidato {
 		this.id = id;
 	}
 
-	public ArrayList<ExperienciaProfissional> getExperienciasProfissionais() {
-		return experienciasProfissionais;
-	}
-
-	public void setExperienciasProfissionais(ArrayList<ExperienciaProfissional> experienciasProfissionais) {
-		this.experienciasProfissionais = experienciasProfissionais;
-	}
-
-	public ArrayList<Formacao> getFormacoes() {
-		return formacoes;
-	}
-
-	public void setFormacoes(ArrayList<Formacao> formacoes) {
-		this.formacoes = formacoes;
-	}
-
-	public ArrayList<FormacaoComplementar> getFormacoesComplementares() {
-		return formacoesComplementares;
-	}
-
-	public void setFormacoesComplementares(ArrayList<FormacaoComplementar> formacoesComplementares) {
-		this.formacoesComplementares = formacoesComplementares;
-	}
 
 	public ArrayList<ProcessoSeletivo> getProcessosSeletivos() {
 		return processosSeletivos;
@@ -156,11 +164,11 @@ public class Candidato {
 		this.endereco = endereco;
 	}
 
-	public int getNumero() {
+	public String getNumero() {
 		return numero;
 	}
 
-	public void setNumero(int numero) {
+	public void setNumero(String numero) {
 		this.numero = numero;
 	}
 
@@ -258,6 +266,30 @@ public class Candidato {
 
 	public void setUf(String uf) {
 		this.uf = uf;
+	}
+
+	public List<ExperienciaProfissional> getExperienciasProfissionais() {
+		return experienciasProfissionais;
+	}
+
+	public void setExperienciasProfissionais(List<ExperienciaProfissional> experienciasProfissionais) {
+		this.experienciasProfissionais = experienciasProfissionais;
+	}
+
+	public List<Formacao> getFormacoes() {
+		return formacoes;
+	}
+
+	public void setFormacoes(List<Formacao> formacoes) {
+		this.formacoes = formacoes;
+	}
+
+	public List<FormacaoComplementar> getFormacoesComplementares() {
+		return formacoesComplementares;
+	}
+
+	public void setFormacoesComplementares(List<FormacaoComplementar> formacoesComplementares) {
+		this.formacoesComplementares = formacoesComplementares;
 	}
 	
 }

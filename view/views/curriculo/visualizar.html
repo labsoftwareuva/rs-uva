@@ -1,0 +1,489 @@
+<div class="animated fadeIn" ng-controller="CurriculoCtrl">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Dados gerais -->
+            <div class="card">
+                <div class="card-header">
+                    <strong>Visualizar currículo</strong>
+                </div>
+                <div class="card-block">
+                    <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+                        
+                        <div class="form-group row">
+                        
+                            <!-- E-mail -->
+                            <label class="col-md-1 form-control-label" for="curriculo-email">E-mail</label>
+                            <div class="col-md-4">
+                              <input type="text" id="curriculo-email" name="curriculo-email" class="form-control">
+                            </div>                        
+                        
+                            <!-- Senha -->
+                            
+                            <label class="col-md-1 form-control-label" for="curriculo-senha">Senha</label>
+                            <div class="col-md-2">
+                              <input type="password" id="curriculo-senha" name="curriculo-senha" class="form-control">
+                            </div>
+                            
+                        
+                            <!-- Repetir Senha-->
+                            <label class="col-md-2 form-control-label" for="curriculo-senha2">Repetir Senha</label>
+                            <div class="col-md-2">
+                              <input type="password" id="curriculo-senha2" name="curriculo-senha2" class="form-control">
+                            </div>                          
+                            
+                        </div>
+                        
+                        <div class="form-group row">
+                        
+                            <!-- Nome -->
+                            <label class="col-md-1 form-control-label" for="curriculo-nome">Nome</label>
+                            <div class="col-md-7">
+                              <input type="text" id="curriculo-nome" name="curriculo-nome" class="form-control">
+                            </div>
+                            
+                            <!-- Data nascimento -->
+                            <label class="col-md-2 form-control-label" for="curriculo-nascimento">Data de nascimento</label>
+                            <div class="col-md-2">
+                              <input type="text" id="curriculo-nascimento" name="curriculo-nascimento" class="form-control">
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="form-group row">
+                            
+                            <!-- CPF -->
+                            <label class="col-md-1 form-control-label" for="curriculo-cpf">CPF</label>
+                            <div class="col-md-4">
+                              <input type="text" id="curriculo-nascimento" name="curriculo-nascimento" class="form-control">
+                            </div>
+                            
+                            <!-- RG -->
+                            <label class="col-md-1 form-control-label" for="curriculo-rg">RG</label>
+                            <div class="col-md-2">
+                              <input type="text" id="curriculo-rg" name="curriculo-rg" class="form-control">
+                            </div>
+                            
+                            <!-- Orgao emissor -->
+                            <label class="col-md-2 form-control-label" for="curriculo-rg-emissor">&Oacute;rg&atilde;o emissor</label>
+                            <div class="col-md-2">
+                              <input type="text" id="curriculo-rg-emissor" name="curriculo-emissor" class="form-control">
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="form-group row">
+                            
+                            <!-- Data de emissao -->
+                            <label class="col-md-1 form-control-label" for="curriculo-rg-emissao">Data de emiss&atilde;o</label>
+                            <div class="col-md-4">
+                              <input type="text" id="curriculo-rg-emissao" name="curriculo-rg-emissao" class="form-control">
+                            </div>
+                            
+                            <!-- Sexo -->
+                            <label class="col-md-1 form-control-label" for="curriculo-rg">Sexo</label>
+                            <div class="col-md-6">
+                              <select class="form-control">
+                                <option value="">Selecione</option>
+                                <option value="M">Masculino</option>
+                                <option value="F">Feminino</option>
+                              </select>
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="form-group row">
+                        
+                            <!-- CEP -->                            
+                            <label class="col-md-1 form-control-label" for="curriculo-cep">CEP</label>
+                            <div class="col-md-4">
+                                <input type="text" ng-model="cep" id="curriculo-cep" name="curriculo-cep" class="form-control">
+                            </div>
+                            <div class="col-md-7">
+                            </div>
+                            
+                        </div>                      
+                        
+                        <div class="form-group row">    
+    
+                            <!-- Endereço -->
+                            <label class="col-md-1 form-control-label" for="curriculo-endereco">Endere&ccedil;o</label>
+                            <div class="col-md-7">
+                                <input type="text" ng-model="logradouro" id="curriculo-endereco" name="curriculo-endereco" class="form-control">
+                            </div>                                         
+    
+                            <!-- Numero -->                         
+                            <label class="col-md-2 form-control-label" for="curriculo-endereco-numero">N&uacute;mero</label>
+                            <div class="col-md-2">
+                                <input type="text" id="curriculo-endereco-numero" name="curriculo-endereco-numero" class="form-control">
+                            </div>                          
+                            
+                        </div>
+                        
+                        <div class="form-group row">
+    
+                            <!-- Complemento -->                            
+                            <label class="col-md-1 form-control-label" for="curriculo-endereco-complemento">Complemento</label>
+                            <div class="col-md-4">
+                                <input type="text" id="curriculo-endereco-complemento" name="curriculo-endereco-complemento" class="form-control">
+                            </div>                          
+    
+                            <!-- Bairro -->                         
+                            <label class="col-md-1 form-control-label" for="curriculo-endereco-bairro">Bairro</label>
+                            <div class="col-md-6">
+                                <input type="text" ng-model="bairro" id="curriculo-endereco-bairro" name="curriculo-endereco-bairro" class="form-control">
+                            </div>                          
+                            
+                        </div>
+                        <div class="form-group row">
+    
+                            <!-- Municipio -->                          
+                            <label class="col-md-1 form-control-label" for="curriculo-endereco-municipio">Munic&iacute;pio</label>
+                            <div class="col-md-4">
+                                <input type="text" ng-model="localidade" id="curriculo-endereco-municipio" name="curriculo-endereco-municipio" class="form-control">
+                            </div>                          
+    
+                            <!-- UF -->                         
+                            <label class="col-md-1 form-control-label" for="curriculo-endereco-uf">UF</label>
+                            <div class="col-md-6">
+                                <input type="text" ng-model="uf" id="curriculo-endereco-uf" name="curriculo-endereco-uf" class="form-control">
+                            </div>                        
+                        
+                        </div>
+
+                        <div class="form-group row">
+    
+                            <!-- Municipio -->                          
+                            <label class="col-md-1 form-control-label" for="curriculo-telefone">Telefone</label>
+                            <div class="col-md-4">
+                                <input type="text" ng-model="telefone" id="curriculo-telefone" name="curriculo-telefone" class="form-control" placeholder="(21)xxxx-xxxx">
+                            </div>                          
+    
+                            <!-- UF -->                         
+                            <label class="col-md-1 form-control-label" for="curriculo-celular">Celular</label>
+                            <div class="col-md-6">
+                                <input type="text" ng-model="celular" id="curriculo-celular" name="curriculo-celular" class="form-control" placeholder="(21)9-xxxx-xxxx">
+                            </div>                        
+                        
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="fotoperfil" class="col-md-1 form-control-label">Adicionar foto de perfil</label>
+                            <div class="col-md-4">
+                                <input type="file" id="fotoperfil" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                        
+                            <!-- Escolaridade -->
+                            <label class="col-md-1 form-control-label" for="curriculo-escolaridade">Nível de escolaridade</label>
+                            <div class="col-md-2">
+                              <select class="form-control">
+                                <option value="">Ensino fundamental</option>
+                                <option value="">Ensino médio</option>
+                                <option value="">Ensino superior</option>
+                              </select>
+                            </div>                       
+                        
+                            <!-- Curso -->
+                            
+                            <label class="col-md-1 form-control-label" for="curriculo-curso">Curso</label>
+                            <div class="col-md-2">
+                              <input type="text" id="curriculo-curso" name="curriculo-curso" class="form-control">
+                            </div>
+                            
+                            <!-- Situação-->
+                            <label class="col-md-1 form-control-label" for="curriculo-situacao">Situação atual</label>
+                            <div class="col-md-3">
+                                <label class="radio-inline"><input type="radio" name="situacao">ㅤㅤㅤㅤ ㅤㅤ ㅤㅤ Concluídoㅤㅤ ㅤㅤ ㅤㅤ ㅤㅤ ㅤㅤ ㅤㅤ </label>
+                                <label class="radio-inline"><input type="radio" name="situacao">ㅤㅤㅤㅤ ㅤㅤ ㅤㅤ Cursandoㅤㅤ ㅤㅤ ㅤㅤ ㅤㅤ ㅤㅤ ㅤㅤ </label>
+                                <label class="radio-inline"><input type="radio" name="situacao">ㅤㅤ ㅤㅤㅤㅤ ㅤㅤ ㅤㅤ Trancadoㅤㅤ ㅤㅤ ㅤㅤ ㅤㅤ ㅤㅤ ㅤㅤ </label>
+                            </div>   
+                                
+
+                            
+                        </div>
+
+                         <div class="form-group row">
+                            <!-- Ano conlcusão -->
+                            <label class="col-md-1 form-control-label" for="curriculo-escolaridade">Ano de conclusão</label>
+                            <div class="col-md-1">
+                              <select class="form-control">
+                                <option value="">1</option>
+                                <option value="">2</option>
+                                <option value="">3</option>
+                                <option value="">4</option>
+                                <option value="">5</option>
+                                <option value="">6</option>
+                                <option value="">7</option>
+                                <option value="">8</option>
+                                <option value="">9</option>
+                                <option value="">10</option>
+                                <option value="">11</option>
+                                <option value="">12</option>
+                              </select>
+                            </div>
+                            <div class="col-md-1">
+                              <select class="form-control">
+                                <option value="">1980</option>
+                                <option value="">1981</option>
+                                <option value="">1982</option>
+                                <option value="">1983</option>
+                                <option value="">1984</option>
+                                <option value="">1985</option>
+                                <option value="">1986</option>
+                                <option value="">1987</option>
+                                <option value="">1988</option>
+                                <option value="">1989</option>
+                                <option value="">1990</option>
+                                <option value="">1991</option>
+                                <option value="">1992</option>
+                                <option value="">1993</option>
+                                <option value="">1994</option>
+                                <option value="">1995</option>
+                                <option value="">1996</option>
+                                <option value="">1997</option>
+                                <option value="">1998</option>
+                                <option value="">1999</option>
+                                <option value="">2001</option>
+                                <option value="">2002</option>
+                                <option value="">2003</option>
+                                <option value="">2004</option>
+                                <option value="">2005</option>
+                                <option value="">2006</option>
+                                <option value="">2007</option>
+                                <option value="">2008</option>
+                                <option value="">2009</option>
+                                <option value="">2010</option>
+                                <option value="">2011</option>
+                                <option value="">2012</option>
+                                <option value="">2013</option>
+                                <option value="">2014</option>
+                                <option value="">2015</option>
+                                <option value="">2016</option>
+                                <option value="">2017</option>
+                              </select>
+                            </div> 
+
+                            <!-- Instituição de Ensino -->
+                            
+                            <label class="col-md-1 form-control-label" for="curriculo-instituição">Instituição de Ensino</label>
+                            <div class="col-md-2">
+                              <input type="text" id="curriculo-instituição" name="curriculo-instituição" class="form-control">
+                            </div>
+
+                            <!-- Estado de Ensino -->
+                            
+                            <label class="col-md-1 form-control-label" for="curriculo-estado-curso">Estado</label>
+                            <div class="col-md-2">
+                              <input type="text" id="curriculo-estado-curso" name="curriculo-estado-curso" class="form-control">
+                            </div>
+
+                            <!-- País -->
+                            
+                            <label class="col-md-1 form-control-label" for="curriculo-pais-curso">País</label>
+                            <div class="col-md-2">
+                              <input type="text" id="curriculo-pais-curso" name="curriculo-pais-curso" class="form-control">
+                            </div>
+
+                         </div>
+
+                         <div class="form-group row">
+
+                            <!-- Curso -->
+                            
+                            <label class="col-md-1 form-control-label" for="curriculo-curso">Nome do curso</label>
+                            <div class="col-md-2">
+                              <input type="text" id="curriculo-curso" name="curriculo-curso" class="form-control">
+                            </div>
+                            
+                            
+
+                            <!-- Escolaridade -->
+
+                            <label class="col-md-1 form-control-label" for="curriculo-escolaridade">Tipo de curso</label>
+                            <div class="col-md-2">
+                              <select class="form-control">
+                                <option value="">Cursos Complementares</option>
+                                <option value="">Pós graduação</option>
+                                <option value="">Pós graduação MBA</option>
+                                <option value="">Pós graduação Mestrado</option>
+                                <option value="">Pós graduação Doutorado</option>
+                              </select>
+                            </div>   
+                                
+                            <!-- Instituição de Ensino -->
+                            
+                            <label class="col-md-1 form-control-label" for="curriculo-instituição">Instituição de Ensino</label>
+                            <div class="col-md-2">
+                              <input type="text" id="curriculo-instituição" name="curriculo-instituição" class="form-control">
+                            </div>
+
+                            <!-- País -->
+                            
+                            <label class="col-md-1 form-control-label" for="curriculo-pais-curso">País</label>
+                            <div class="col-md-2">
+                              <input type="text" id="curriculo-pais-curso" name="curriculo-pais-curso" class="form-control">
+                            </div>
+
+                            <!-- Estado de Ensino -->
+                            
+                            <label class="col-md-1 form-control-label" for="curriculo-estado-curso">Estado</label>
+                            <div class="col-md-2">
+                              <input type="text" id="curriculo-estado-curso" name="curriculo-estado-curso" class="form-control">
+                            </div>
+
+                            <!-- Duração -->
+
+                            <label class="col-md-1 form-control-label" for="curriculo-duracao">Duração do curso</label>
+                            <div class="col-md-2">
+                              <select class="form-control">
+                                <option value="">Curta (Até 40h)</option>
+                                <option value="">Média (Acima de 40h e até 360h)</option>
+                                <option value="">Longa (Acima de 360h)</option>
+                              </select>
+                            </div> 
+
+                            <!-- Situação-->
+                            <label class="col-md-1 form-control-label" for="curriculo-situacao">Situação atual</label>
+                            <div class="col-md-3">
+                                <label class="radio-inline"><input type="radio" name="situacao">ㅤㅤㅤㅤ ㅤㅤ ㅤㅤ Concluídoㅤㅤ ㅤㅤ ㅤㅤ ㅤㅤ ㅤㅤ ㅤㅤ </label>
+                                <label class="radio-inline"><input type="radio" name="situacao">ㅤㅤㅤㅤ ㅤㅤ ㅤㅤ Cursandoㅤㅤ ㅤㅤ ㅤㅤ ㅤㅤ ㅤㅤ ㅤㅤ </label>
+                                <label class="radio-inline"><input type="radio" name="situacao">ㅤㅤ ㅤㅤㅤㅤ ㅤㅤ ㅤㅤ Trancadoㅤㅤ ㅤㅤ ㅤㅤ ㅤㅤ ㅤㅤ ㅤㅤ </label>
+                            </div>   
+
+                            
+                        </div>
+
+                         <div class="form-group row">
+                            <!-- Ano conlcusão -->
+                            <label class="col-md-1 form-control-label" for="curriculo-escolaridade">Ano de conclusão</label>
+                            <div class="col-md-1">
+                              <select class="form-control">
+                                <option value="">1</option>
+                                <option value="">2</option>
+                                <option value="">3</option>
+                                <option value="">4</option>
+                                <option value="">5</option>
+                                <option value="">6</option>
+                                <option value="">7</option>
+                                <option value="">8</option>
+                                <option value="">9</option>
+                                <option value="">10</option>
+                                <option value="">11</option>
+                                <option value="">12</option>
+                              </select>
+                            </div>
+                            <div class="col-md-1">
+                              <select class="form-control">
+                                <option value="">1980</option>
+                                <option value="">1981</option>
+                                <option value="">1982</option>
+                                <option value="">1983</option>
+                                <option value="">1984</option>
+                                <option value="">1985</option>
+                                <option value="">1986</option>
+                                <option value="">1987</option>
+                                <option value="">1988</option>
+                                <option value="">1989</option>
+                                <option value="">1990</option>
+                                <option value="">1991</option>
+                                <option value="">1992</option>
+                                <option value="">1993</option>
+                                <option value="">1994</option>
+                                <option value="">1995</option>
+                                <option value="">1996</option>
+                                <option value="">1997</option>
+                                <option value="">1998</option>
+                                <option value="">1999</option>
+                                <option value="">2001</option>
+                                <option value="">2002</option>
+                                <option value="">2003</option>
+                                <option value="">2004</option>
+                                <option value="">2005</option>
+                                <option value="">2006</option>
+                                <option value="">2007</option>
+                                <option value="">2008</option>
+                                <option value="">2009</option>
+                                <option value="">2010</option>
+                                <option value="">2011</option>
+                                <option value="">2012</option>
+                                <option value="">2013</option>
+                                <option value="">2014</option>
+                                <option value="">2015</option>
+                                <option value="">2016</option>
+                                <option value="">2017</option>
+                              </select>
+                            </div> 
+                            
+                         </div>
+
+                         <div class="form-group row">
+                        
+                            <!-- Nome da empresa -->
+                            
+                            <label class="col-md-1 form-control-label" for="curriculo-empresa">Nome da empresa</label>
+                            <div class="col-md-2">
+                              <input type="text" id="curriculo-empresa" name="curriculo-empresa" class="form-control">
+                            </div>
+
+                            <!-- País -->
+
+                            <label class="col-md-1 form-control-label" for="curriculo-pais-empresa">País</label>
+                            <div class="col-md-2">
+                              <select class="form-control">
+                                <option value="">Brasil</option>
+                                <option value="">USA</option>
+                                <option value="">Canadá</option>
+                                <option value="">Itália</option>
+                              </select>
+                            </div>  
+
+                            <!-- Estado de empresa -->
+                            
+                            <label class="col-md-1 form-control-label" for="curriculo-estado-empresa">Estado</label>
+                            <div class="col-md-2">
+                              <input type="text" id="curriculo-estado-empresa" name="curriculo-estado-empresa" class="form-control">
+                            </div>
+
+                            <!-- Nome do cargo -->
+                            
+                            <label class="col-md-1 form-control-label" for="curriculo-cargo">Título do cargo</label>
+                            <div class="col-md-2">
+                              <input type="text" id="curriculo-cargo" name="curriculo-cargo" class="form-control">
+                            </div>   
+
+                            <!-- Nome do setor -->
+                            
+                            <label class="col-md-1 form-control-label" for="curriculo-setor">Setor</label>
+                            <div class="col-md-2">
+                              <input type="text" id="curriculo-setor" name="curriculo-setor" class="form-control">
+                            </div> 
+                            
+                                             
+                            
+                        </div>
+
+                         <div class="form-group row">
+                            <!-- periodo -->
+                            <label class="col-md-1 form-control-label" for="curriculo-periodo">Período</label>
+                            <div class="col-md-2">
+                                <input type="date" id="curriculo-periodo" name="curriculo-periodo" class="form-control">
+                                <strong>até</strong>
+                                <input type="date" id="curriculo-periodo" name="curriculo-periodo" class="form-control">
+                            </div>  
+                            <!-- text -->
+                            <label class="col-md-1 form-control-label" for="curriculo-descricao">Descrição das atividades</label>
+                            <div class="col-md-5">
+                                <textarea lass="form-control" class="form-control" rows="10"></textarea>
+                            </div>  
+                         </div>
+                        
+                    </form>
+                        
+                </div>
+
+            </div>
+    	</div>    
+	</div>
+</div>

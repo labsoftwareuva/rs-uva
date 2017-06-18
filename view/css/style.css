@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /**
  * CoreUI - Open Source Bootstrap Admin Template
  * @version v1.0.0-alpha.5
@@ -30,7 +31,9 @@ h1 {
 figcaption,
 figure,
 main {
-  display: block; }
+  display: block;
+  margin-top:20px;
+ }
 
 figure {
   margin: 1em 40px; }
@@ -863,8 +866,7 @@ pre {
   width: 41.66667%; }
 
 .col-6 {
-  width: 37%;
-  margin-left:auto; }
+  width: 50%; }
 
 .col-7 {
   width: 58.33333%; }
@@ -2884,8 +2886,7 @@ tbody.collapse.show {
 
 .card-block {
   flex: 1 1 auto;
-  padding: 1.5rem;
- }
+  padding: 1.25rem; }
 
 .card-title {
   margin-bottom: 0.75rem;
@@ -4847,7 +4848,7 @@ a.bg-inverse:focus, a.bg-inverse:hover {
   padding-left: 3rem !important; }
 
 .py-5 {
-  padding-top: 4rem !important;
+  padding-top: 3rem !important;
   padding-bottom: 3rem !important; }
 
 .m-auto {
@@ -7334,7 +7335,7 @@ base-chart.chart {
     padding-left: 7.5px; }
 
 .main .container-fluid {
-  padding: 20px 20px; }
+  padding: 0 30px; }
 
 .input-group-addon,
 .input-group-btn {
@@ -7547,20 +7548,19 @@ base-chart.chart {
   border-bottom: 1px solid #cfd8dc; }
   .app-header.navbar .navbar-brand {
     display: inline-block;
-    width: 150px;
+    width: 155px;
     height: 55px;
-    padding: 1rem 2rem;
+    padding: 0.5rem 1rem;
     margin-right: 0;
     background-color: #fff;
     background-image: url("../img/logo-rs-uva.png");
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: 120px auto;
+    background-size: 70px auto;
     border-bottom: 1px solid #cfd8dc; }
   .app-header.navbar .navbar-nav {
     flex-direction: row;
-    align-items: center;
-    margin-right: 2rem; }
+    align-items: center; }
   .app-header.navbar .nav-item {
     position: relative;
     min-width: 50px;
@@ -8560,9 +8560,7 @@ app-root {
   flex: 0 0 55px; }
 
 .app-footer {
-  flex: 0 0 50px;
-  padding-left: auto;
-  padding-right: auto;}
+  flex: 0 0 50px; }
 
 .app-body {
   display: flex;

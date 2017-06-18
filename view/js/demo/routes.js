@@ -137,11 +137,39 @@ angular
       }]
     }
   })
-  .state('app.curriculo', {
+  .state('app.incluir', {
     url: '/curriculo/incluir',
-    templateUrl: 'views/curriculo/cadastro.html?opcao=1',
+    templateUrl: 'views/curriculo/cadastro.html',
     ncyBreadcrumb: {
-      label: 'Curriculo'
+      label: 'Incluir'
+    }
+  })
+  .state('app.formacaoAcademica', {
+    url: '/curriculo/formacaoAcademica',
+    templateUrl: 'views/curriculo/formacao_academica.html',
+    ncyBreadcrumb: {
+      label: 'formacaoAcademica'
+    }
+  })
+  .state('app.formacaoComplementar', {
+    url: '/curriculo/formacaoComplementar',
+    templateUrl: 'views/curriculo/formacao_complementar.html',
+    ncyBreadcrumb: {
+      label: 'formacaoComplementar'
+    }
+  })
+  .state('app.experienciaProfissional', {
+    url: '/curriculo/experienciaProfissional',
+    templateUrl: 'views/curriculo/experiencia_profissional.html',
+    ncyBreadcrumb: {
+      label: 'experienciaProfissional'
+    }
+  })
+  .state('app.visualizar', {
+    url: '/curriculo/visualizar',
+    templateUrl: 'views/curriculo/visualizar.html',
+    ncyBreadcrumb: {
+      label: 'Visualizar'
     }
   })
 }]);

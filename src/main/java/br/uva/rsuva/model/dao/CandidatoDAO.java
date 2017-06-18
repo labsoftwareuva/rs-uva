@@ -7,6 +7,8 @@ import br.uva.rsuva.model.entity.Candidato;
 public interface CandidatoDAO {
 
 	public int incluir(Candidato candidato);
+
+	public int incluirCompleto(Candidato candidato);
 	
 	public boolean alterar(Candidato candidato);
 

@@ -2,22 +2,41 @@ package br.uva.rsuva.model.entity;
 
 import java.util.GregorianCalendar;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class ExperienciaProfissional {
-	
+	@XmlElement
 	private int id;
+	@XmlElement
 	private String empresa;
+	@XmlElement
 	private String pais;
+	@XmlElement
 	private String estado;
+	@XmlElement
 	private String tituloCargo;
+	@XmlElement
 	private String setor;
+	@XmlElement
 	private String atualidade;
+	@XmlElement
 	private String atividades;
-	private GregorianCalendar periodo;
+	@XmlElement
+	private GregorianCalendar inicioPeriodo;
+	@XmlElement
+	private GregorianCalendar fimPeriodo;
+	
 	
 	public ExperienciaProfissional(){}
 
+	
+
+	
 	public ExperienciaProfissional(int id, String empresa, String pais, String estado, String tituloCargo, String setor,
-			String atualidade, String atividades, GregorianCalendar periodo) {
+			String atualidade, String atividades, GregorianCalendar inicioPeriodo, GregorianCalendar fimPeriodo) {
+		super();
 		this.id = id;
 		this.empresa = empresa;
 		this.pais = pais;
@@ -26,8 +45,11 @@ public class ExperienciaProfissional {
 		this.setor = setor;
 		this.atualidade = atualidade;
 		this.atividades = atividades;
-		this.periodo = periodo;
+		this.inicioPeriodo = inicioPeriodo;
+		this.fimPeriodo = fimPeriodo;
 	}
+
+
 
 	public int getId() {
 		return id;
@@ -93,12 +115,34 @@ public class ExperienciaProfissional {
 		this.atividades = atividades;
 	}
 
-	public GregorianCalendar getPeriodo() {
-		return periodo;
+
+
+	public GregorianCalendar getInicioPeriodo() {
+		return inicioPeriodo;
 	}
 
-	public void setPeriodo(GregorianCalendar periodo) {
-		this.periodo = periodo;
+
+
+	public void setInicioPeriodo(GregorianCalendar inicioPeriodo) {
+		this.inicioPeriodo = inicioPeriodo;
 	}
+
+
+
+	public GregorianCalendar getFimPeriodo() {
+		return fimPeriodo;
+	}
+
+
+
+	public void setFimPeriodo(GregorianCalendar fimPeriodo) {
+		this.fimPeriodo = fimPeriodo;
+	}
+
+
+
+	
+
+	
 
 }
