@@ -3,6 +3,9 @@ package br.uva.rsuva.model;
 import java.sql.Connection;
 import java.util.Properties;
 
+import br.uva.rsuva.model.dao.ConnectionFactory;
+import br.uva.rsuva.model.dao.Propriedades;
+
 public class ConnectionFactoryTest {
 
 	public static void main(String[] args) {

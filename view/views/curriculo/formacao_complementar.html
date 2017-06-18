@@ -1,0 +1,170 @@
+<div class="animated fadeIn" ng-controller="CurriculoCtrl">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Formação complementar -->
+            <div class="card">
+                <div class="card-header">
+                    <strong>Incluir Curr&iacute;culo - Forma&ccedil;&atilde;o complementar</strong>
+                    <strong class="pull-right">3 de 4</strong>
+                </div>
+                <div class="card-block">
+                    <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+
+                        <div class="form-group row">
+
+                            <!-- Curso -->
+
+                            <label class="col-md-2 form-control-label" for="curriculo-curso">Nome do curso</label>
+                            <div class="col-md-10">
+                              <input type="text" id="curriculo-curso" name="curriculo-curso" class="form-control" ng-model="curso.nome">
+                            </div>
+
+                        </div>
+
+                        <div class="form-group row">
+
+                            <!-- Escolaridade -->
+
+                            <label class="col-md-2 form-control-label" for="curriculo-escolaridade">Tipo de curso</label>
+                            <div class="col-md-10">
+                              <select class="form-control" ng-model="curso.tipo">
+                                <option value="curso_complementar">Cursos Complementares</option>
+                                <option value="pos_graduacao">Pós graduação</option>
+                                <option value="pos_mba">Pós graduação MBA</option>
+                                <option value="pos_mestrado">Pós graduação Mestrado</option>
+                                <option value="pos_doutorado">Pós graduação Doutorado</option>
+                              </select>
+                            </div>
+
+                        </div>
+                        <div class="form-group row">
+
+                            <!-- Instituição de Ensino -->
+
+                            <label class="col-md-2 form-control-label" for="curriculo-instituição">Instituição de Ensino</label>
+                            <div class="col-md-10">
+                              <input type="text" id="curriculo-instituição" name="curriculo-instituição" class="form-control" ng-model="curso.instituicao">
+                            </div>
+
+                        </div>
+                        <div class="form-group row">
+
+                            <!-- País -->
+
+                            <label class="col-md-2 form-control-label" for="curriculo-pais-curso">País</label>                            
+                            <div class="col-md-4">
+                              <select class="form-control" ng-model="curso.pais">
+                                <option ng-repeat="pais in paises" value="{{pais}}"> {{pais}}</option>
+                              </select>
+                            </div>
+
+                            <!-- Estado de Ensino -->
+
+                            <label class="col-md-2 form-control-label" for="curriculo-estado-curso">Estado</label>
+                            <div class="col-md-4">
+                              <input type="text" id="curriculo-estado-curso" name="curriculo-estado-curso" class="form-control" ng-model="curso.estado">
+                            </div>
+
+                        </div>
+                        <div class="form-group row">
+
+                            <!-- Duração -->
+
+                            <label class="col-md-2 form-control-label" for="curriculo-duracao">Duração do curso</label>
+                            <div class="col-md-5">
+                              <select class="form-control" ng-model="curso.duracao">
+                                <option value="curta">Curta (Até 40h)</option>
+                                <option value="media">Média (Acima de 40h e até 360h)</option>
+                                <option value="longa">Longa (Acima de 360h)</option>
+                              </select>
+                            </div>
+
+                        </div>
+                        <div class="form-group row">
+
+                            <!-- Situação-->
+                            <label class="col-md-2 form-control-label" for="curriculo-situacao">Situação atual</label>
+                            <div class="col-md-10">
+                                <label class="radio-inline col-md-2"><input type="radio" name="situacao" class="col-md-2" ng-model="curso.situacao" value="concluido">Concluído</label>
+                                <label class="radio-inline col-md-2"><input type="radio" name="situacao" class="col-md-2" ng-model="curso.situacao" value="cursando">Cursando</label>
+                                <label class="radio-inline col-md-2"><input type="radio" name="situacao" class="col-md-2" ng-model="curso.situacao" value="trancado">Trancado</label>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group row">
+                           <!-- Mês conlcusão -->
+                           <label class="col-md-2 form-control-label" for="curriculo-escolaridade">M&ecirc;s de conclus&atilde;o</label>
+                           <div class="col-md-3">
+                             <select class="form-control" ng-model="curso.mesConclusao">
+                               <option value="1">Janeiro</option>
+                               <option value="2">Fevereiro</option>
+                               <option value="3">Mar&ccedil;o</option>
+                               <option value="4">Abril</option>
+                               <option value="5">Maio</option>
+                               <option value="6">Junho</option>
+                               <option value="7">Julho</option>
+                               <option value="8">Agosto</option>
+                               <option value="9">Setembro</option>
+                               <option value="10">Outubro</option>
+                               <option value="11">Novembro</option>
+                               <option value="12">Dezembro</option>
+                             </select>
+                           </div>
+
+                           <!-- Ano Conclusão -->
+
+                           <label class="col-md-2 form-control-label" for="curriculo-escolaridade">Ano de conclus&atilde;o</label>
+                           <div class="col-md-3">
+                             <select class="form-control" ng-model="curso.conclusao">
+                               <option ng-repeat="ano in anosFormacao" value="{{ano}}"> {{ano}}</option>
+                             </select>
+                           </div>
+
+                           <!-- Adicionar -->
+                           <div class="col-md-2">
+                             <button type="button" id="curriculo-adiciona-formacao" name="curriculo-adiciona-formacao" class="form-control btn btn-primary icon-plus" ng-click="adicionarCursoCompl(curso)"> Adicionar</button>
+                           </div>
+
+                       </div>
+
+                       <p><strong>Forma&ccedil;&otilde;es Complementares Inclu&iacute;das</strong></p>
+
+                       <!--<p>{{listaCursos}}-->
+
+                       <table class="table table-hover table-outline mb-0 table-responsive">
+                           <thead class="thead-default">
+                               <tr>
+                                   <th></th>
+                                   <th>Nome Curso</th>
+                                   <th>Tipo Curso</th>
+                                   <th>Institui&ccedil;&atilde;o</th>
+                                   <th>Ano Conlus&atilde;o</th>
+                                   <th>
+                                      <button type="button" id="curriculo-remove-formacao" name="curriculo-remove-formacao" class="form-control btn btn-sm btn-danger icon-minus" style="width:6em" ng-click="removerCursosCompl()"> Remover</button>
+                                   </th>
+                               </tr>
+                           </thead>
+                           <tbody>
+                             <tr ng-repeat="curso in listaCursosCompl">
+                                <td><input type="checkbox" ng-model="curso.selecionado"></td>
+                                <td>{{ curso.nome }}</td>
+                                <td>{{ curso.tipo }}</td>
+                                <td>{{ curso.instituicao }}</td>
+                                <td>{{ curso.conclusao }}</td>
+                             </tr>
+                           </tbody>
+
+                      </table>
+
+                    </form>
+
+                </div>
+                <div class="card-footer">
+                    <button type="button" class="btn btn-sm btn-primary pull-right col-md-1" ng-click="session(3,listaCursosCompl);go('./#!/curriculo/experienciaProfissional')" ng-disabled="listaCursosCompl.length == 0"><i class="fa fa-dot-circle-o"></i> Pr&oacute;ximo</button>
+                    <a href="./#!/curriculo/formacaoAcademica"><button type="button" class="btn btn-sm btn-danger pull-right col-md-1"><i class="fa fa-ban"></i> Voltar</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

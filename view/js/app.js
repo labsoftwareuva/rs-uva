@@ -24,9 +24,19 @@ angular
   cfpLoadingBarProvider.latencyThreshold = 1;
 }])
 .run(['$rootScope', '$state', '$stateParams', function($rootScope, $state, $stateParams) {
+
+  // Variáveis de Sessão do Curriculo
+  $rootScope.global_curriculo_dados_gerais             = {};
+  $rootScope.global_curriculo_formacao_academica       = [];
+  $rootScope.global_curriculo_formacao_complementar    = [];
+  $rootScope.global_curriculo_experiencia_profissional = [];
+
   $rootScope.$on('$stateChangeSuccess',function(){
     document.body.scrollTop = document.documentElement.scrollTop = 0;
   });
   $rootScope.$state = $state;
+
+
+
   return $rootScope.$stateParams = $stateParams;
 }]);

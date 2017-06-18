@@ -1,31 +1,84 @@
 package br.uva.rsuva.model.entity;
-import br.uva.rsuva.model.entity.CursoEnum;
-import br.uva.rsuva.model.entity.MesEnum;
+import java.util.GregorianCalendar;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class Formacao {
-	
+	@XmlElement
 	private int id;
-	private CursoEnum curso;
+	@XmlElement
+	private String instituicao;
+	@XmlElement
+	private String curso;
+	@XmlElement
 	private String estadoAtual;
+	@XmlElement
 	private String outros;	
-	private MesEnum mesConclusao;	
-	private int anoConclusao;
+	@XmlElement
 	private String estado;
+	@XmlElement
 	private String pais;
+	@XmlElement
+	private GregorianCalendar dataConclusao;
+	@XmlElement
+	private String nivel;
+	@XmlElement
+	private String mesConclusao;
+	@XmlElement
+	private String anoConclusao;
 	
 	public Formacao(){}
 
-	public Formacao(int id, CursoEnum curso, String estadoAtual, String outros, MesEnum mesConclusao, int anoConclusao,
-			String estado, String pais) {
+	
+
+	public Formacao(int id, String instituicao, String curso, String estadoAtual, String outros, String estado,
+			String pais, GregorianCalendar dataConclusao, String nivel) {
+		super();
 		this.id = id;
+		this.instituicao = instituicao;
 		this.curso = curso;
 		this.estadoAtual = estadoAtual;
 		this.outros = outros;
-		this.mesConclusao = mesConclusao;
-		this.anoConclusao = anoConclusao;
 		this.estado = estado;
 		this.pais = pais;
+		this.dataConclusao = dataConclusao;
+		this.nivel = nivel;
 	}
+	
+
+
+
+	public Formacao(int id, String instituicao, String curso, String estadoAtual, String outros, String estado,
+			String pais, GregorianCalendar dataConclusao, String nivel, String mesConclusao, String anoConclusao) {
+		super();
+		this.id = id;
+		this.instituicao = instituicao;
+		this.curso = curso;
+		this.estadoAtual = estadoAtual;
+		this.outros = outros;
+		this.estado = estado;
+		this.pais = pais;
+		this.dataConclusao = dataConclusao;
+		this.nivel = nivel;
+		this.mesConclusao = mesConclusao;
+		this.anoConclusao = anoConclusao;
+	}
+
+
+
+	public String getNivel() {
+		return nivel;
+	}
+
+
+
+	public void setNivel(String nivel) {
+		this.nivel = nivel;
+	}
+
+
 
 	public int getId() {
 		return id;
@@ -35,11 +88,11 @@ public class Formacao {
 		this.id = id;
 	}
 
-	public CursoEnum getCurso() {
+	public String getCurso() {
 		return curso;
 	}
 
-	public void setCurso(CursoEnum curso) {
+	public void setCurso(String curso) {
 		this.curso = curso;
 	}
 
@@ -59,22 +112,6 @@ public class Formacao {
 		this.outros = outros;
 	}
 
-	public MesEnum getMesConclusao() {
-		return mesConclusao;
-	}
-
-	public void setMesConclusao(MesEnum mesConclusao) {
-		this.mesConclusao = mesConclusao;
-	}
-
-	public int getAnoConclusao() {
-		return anoConclusao;
-	}
-
-	public void setAnoConclusao(int anoConclusao) {
-		this.anoConclusao = anoConclusao;
-	}
-
 	public String getEstado() {
 		return estado;
 	}
@@ -89,6 +126,54 @@ public class Formacao {
 
 	public void setPais(String pais) {
 		this.pais = pais;
+	}
+
+
+
+	public String getInstituicao() {
+		return instituicao;
+	}
+
+
+
+	public void setInstituicao(String instituicao) {
+		this.instituicao = instituicao;
+	}
+
+
+
+	public GregorianCalendar getDataConclusao() {
+		return dataConclusao;
+	}
+
+
+
+	public void setDataConclusao(GregorianCalendar dataConclusao) {
+		this.dataConclusao = dataConclusao;
+	}
+
+
+
+	public String getMesConclusao() {
+		return mesConclusao;
+	}
+
+
+
+	public void setMesConclusao(String mesConclusao) {
+		this.mesConclusao = mesConclusao;
+	}
+
+
+
+	public String getAnoConclusao() {
+		return anoConclusao;
+	}
+
+
+
+	public void setAnoConclusao(String anoConclusao) {
+		this.anoConclusao = anoConclusao;
 	}	
 
 	

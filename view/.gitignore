@@ -1,0 +1,5 @@
+node_modules/*
+versions/dev/*
+versions/build/*
+*.DS_Store
+*.tmp

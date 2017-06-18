@@ -1,10 +1,17 @@
 package br.uva.rsuva.model.entity;
 
-public class Usuario {
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
+@XmlRootElement
+public class Usuario {
+	@XmlElement
 	private int id;
+	@XmlElement
 	private String nome;
-	private String senha;	
+	@XmlElement
+	private String senha;
+	@XmlElement
 	private String email;
 	
 	public Usuario(){}
