@@ -46,10 +46,10 @@ Estas instruções irão levá-lo a uma cópia do projeto em funcionamento em su
 > 2. Clique no botão _Next_
 ---
 ![alt text](https://github.com/labsoftwareuva/rs-uva/raw/master/view/img/docs/print-06.jpg)
-> 1. Selecione os branches que deseja baixar(recomendo selecionar toda a lista, caso existam vários) e cLique no botão _Next_
+> 1. Selecione os branches que deseja baixar(recomendo selecionar toda a lista, caso existam vários) e clique no botão _Next_
 ---
 ![alt text](https://github.com/labsoftwareuva/rs-uva/raw/master/view/img/docs/print-07.jpg)
-> 1. Escolha um diretório em sua máquina, onde ficarão os arquivos do projeto
+> 1. Escolha um diretório em sua máquina, para armazenar os arquivos do projeto
 > 2. Clique no botão _Next_
 ---
 ![alt text](https://github.com/labsoftwareuva/rs-uva/raw/master/view/img/docs/print-08.jpg)
@@ -85,7 +85,7 @@ Estas instruções irão levá-lo a uma cópia do projeto em funcionamento em su
 > Uma barra de status aparecerá no canto inferior direito da tela. Aguarde até que a instalação encerre
 ---
 ![alt text](https://github.com/labsoftwareuva/rs-uva/raw/master/view/img/docs/print-18.jpg)
-> Clique na opção **_No_** para instalar as demais dependências
+> Clique na opção **_No_** para instalar as demais dependências, antes de restartar a IDE
 ---
 ![alt text](https://github.com/labsoftwareuva/rs-uva/raw/master/view/img/docs/print-19.jpg)
 > 1. Clique com o botão direito na pasta raiz do projeto _rsuva_
@@ -99,12 +99,13 @@ Estas instruções irão levá-lo a uma cópia do projeto em funcionamento em su
 > Vamos repetir o processo de instalação clicando no botão _Show Solutions_
 ---
 ![alt text](https://github.com/labsoftwareuva/rs-uva/raw/master/view/img/docs/print-22.jpg)
-> Clique no botão _Install_
+> Clique no botão _Install_ e repita o processo de instalação
 ---
 ![alt text](https://github.com/labsoftwareuva/rs-uva/raw/master/view/img/docs/print-23.jpg)
-> Ao finalizar instalação, caso não exista mais nenhuma dependencia a ser instalada, clique no botão _Restart Now_
+> Ao final da instalação, caso não exista mais nenhuma dependencia a ser instalada, clique no botão _Restart Now_
 ---
 ![alt text](https://github.com/labsoftwareuva/rs-uva/raw/master/view/img/docs/print-24.jpg)
+> Ao reiniciar a IDE
 > 1. Selecione a pasta _View_
 > 2. Clique no menu dropdown da opção _Run_
 > 3. Selecione a opção _Run as > Bower Update_
@@ -134,7 +135,7 @@ Estas instruções irão levá-lo a uma cópia do projeto em funcionamento em su
 > 3. Clique no botão _Finish_
 ---
 ![alt text](https://github.com/labsoftwareuva/rs-uva/raw/master/view/img/docs/print-34.jpg)
-> 1. Copie o link _http://localhost:8080/rsuva_ e cole em seu navegador
+> 1. Copie o link _http://localhost:8080/rsuva_ e cole em seu navegador para ver a aplicação rodando em sua máquina local
 ---
 ![alt text](https://github.com/labsoftwareuva/rs-uva/raw/master/view/img/docs/print-35.jpg)
 ---
