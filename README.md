@@ -1,103 +1,144 @@
 # RS-UVA
 
-O projeto foi feito para agilizar as tarefas de entrevistas e marketing de vagas de emprego.
-
-## Começando
-
-Estas instruções irão levá-lo a uma cópia do projeto em funcionamento em sua máquina local para fins de desenvolvimento e teste.
+O RS-UVA tem como objetivo, agilizar as tarefas de entrevistas e marketing de vagas de emprego. Abaixo, seguirão algumas instruções para equipes de implementação e testes.
 
 ### Pré-requisitos
 
-O que você precisa para rodar a aplicação
-⋅⋅* [Node](https://www.google.com).
+Abaixo, tudo que você precisa para rodar a aplicação.
+Acesse os links listados abaixo e faça o download dos arquivos de instalação.
 
++ [Node](https://nodejs.org/)
++ [Git](https://git-scm.com/downloads)
++ [Eclipse IDE](https://www.eclipse.org/downloads/)
 
-..* [NPM](https://www.npmjs.com/get-npm) Gerenciador de pacotes do Node:
+#### Agora, abra seu terminal e execute os seguintes comandos:
+
+Para instalar o gerenciador de pacos do Node, o **NPM**:
 ```
 npm install npm@latest -g
 ```
-
-⋅⋅* BowerJS.
+Para instalar o **Bower**, gerenciador de dependencias do projeto:
 ```
 npm install -g bower
 ```
 
-⋅⋅* Git.
-⋅⋅* JDK.
-⋅⋅* Eclipse.
-⋅⋅* Unordered sub-list.
-⋅⋅* Unordered sub-list.
+### Passo a passo
 
-```
-Give examples
-```
+Estas instruções irão levá-lo a uma cópia do projeto em funcionamento em sua máquina local para fins de desenvolvimento e teste.
 
-### Configurando IDE
-
-```
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
-
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
+---
+![alt text](https://github.com/labsoftwareuva/rs-uva/raw/master/view/img/docs/print-01.jpg)
+> Abra seu Eclipse. Na tela de boas vindas, selecione a opção _Checkout projects from Git_
+---
+![alt text](https://github.com/labsoftwareuva/rs-uva/raw/master/view/img/docs/print-02.jpg)
+> Clique na opção _CloneURI_ e, em seguida, no botão _Next_
+---
+![alt text](https://github.com/labsoftwareuva/rs-uva/raw/master/view/img/docs/print-03.jpg)
+> 1. Acesse o repositório do projeto
+> 2. Clique no botão _Clone or Download_
+> 3. Clique no botão da _prancheta_ para colar a URI
+---
+![alt text](https://github.com/labsoftwareuva/rs-uva/raw/master/view/img/docs/print-04.jpg)
+> Retorne para o Eclipse e:
+> 1. Cole a URI no campo _URI_ (Todos os outros campos serão preenchidos automaticamente)
+---
+![alt text](https://github.com/labsoftwareuva/rs-uva/raw/master/view/img/docs/print-05.jpg)
+> 2. Clique no botão _Next_
+---
+![alt text](https://github.com/labsoftwareuva/rs-uva/raw/master/view/img/docs/print-06.jpg)
+> 1. Selecione os branches que deseja baixar(recomendo selecionar toda a lista, caso existam vários) e cLique no botão _Next_
+---
+![alt text](https://github.com/labsoftwareuva/rs-uva/raw/master/view/img/docs/print-07.jpg)
+> 1. Escolha um diretório em sua máquina, onde ficarão os arquivos do projeto
+> 2. Clique no botão _Next_
+---
+![alt text](https://github.com/labsoftwareuva/rs-uva/raw/master/view/img/docs/print-08.jpg)
+> Aguarde até que o projeto seja clonado
+---
+![alt text](https://github.com/labsoftwareuva/rs-uva/raw/master/view/img/docs/print-09.jpg)
+> 1. Selecione a opção _Import existing Eclipse projects_
+> 2. Clique no botão _Next_
+---
+![alt text](https://github.com/labsoftwareuva/rs-uva/raw/master/view/img/docs/print-10.jpg)
+> 1. Clique no botão _Finish_
+---
+![alt text](https://github.com/labsoftwareuva/rs-uva/raw/master/view/img/docs/print-11.jpg)
+> Aguarde até que o processo seja finalizado
+---
+![alt text](https://github.com/labsoftwareuva/rs-uva/raw/master/view/img/docs/print-12.jpg)
+> Caso alguma biblioteca Java, que o projeto dependa, esteja faltando em sua IDE, a janela de Markeplace aparecerá
+> 1. Clique no botão _Show Solutions_
+---
+![alt text](https://github.com/labsoftwareuva/rs-uva/raw/master/view/img/docs/print-13.jpg)
+> Instale a primeira biblioteca clicando sobre o botão _Install_
+---
+![alt text](https://github.com/labsoftwareuva/rs-uva/raw/master/view/img/docs/print-14.jpg)
+> Clique sobre o botão _Confirm_
+---
+![alt text](https://github.com/labsoftwareuva/rs-uva/raw/master/view/img/docs/print-15.jpg)
+> 1. Aceite os termos selecionando a opção _I accept the terms of the license agreement_
+---
+![alt text](https://github.com/labsoftwareuva/rs-uva/raw/master/view/img/docs/print-16.jpg)
+> Clique no botão _Finish_
+---
+![alt text](https://github.com/labsoftwareuva/rs-uva/raw/master/view/img/docs/print-17.jpg)
+> Uma barra de status aparecerá no canto inferior direito da tela. Aguarde até que a instalação encerre
+---
+![alt text](https://github.com/labsoftwareuva/rs-uva/raw/master/view/img/docs/print-18.jpg)
+> Clique na opção **_No_** para instalar as demais dependências
+---
+![alt text](https://github.com/labsoftwareuva/rs-uva/raw/master/view/img/docs/print-19.jpg)
+> 1. Clique com o botão direito na pasta raiz do projeto _rsuva_
+> 2. Selecione a opção _Maven > Update Project..._
+---
+![alt text](https://github.com/labsoftwareuva/rs-uva/raw/master/view/img/docs/print-20.jpg)
+> 1. Clique no botão _Ok_
+---
+![alt text](https://github.com/labsoftwareuva/rs-uva/raw/master/view/img/docs/print-21.jpg)
+> Novamente, a janela de Marketplace aparecerá lembrando-nos que ainda temos dependencias ausentes no projeto
+> Vamos repetir o processo de instalação clicando no botão _Show Solutions_
+---
+![alt text](https://github.com/labsoftwareuva/rs-uva/raw/master/view/img/docs/print-22.jpg)
+> Clique no botão _Install_
+---
+![alt text](https://github.com/labsoftwareuva/rs-uva/raw/master/view/img/docs/print-23.jpg)
+> Ao finalizar instalação, caso não exista mais nenhuma dependencia a ser instalada, clique no botão _Restart Now_
+---
+![alt text](https://github.com/labsoftwareuva/rs-uva/raw/master/view/img/docs/print-24.jpg)
+> 1. Selecione a pasta _View_
+> 2. Clique no menu dropdown da opção _Run_
+> 3. Selecione a opção _Run as > Bower Update_
+---
+![alt text](https://github.com/labsoftwareuva/rs-uva/raw/master/view/img/docs/print-25.jpg)
+> Acompanhe a barra de status no canto inferior direito e aguarde o término da atualização
+---
+![alt text](https://github.com/labsoftwareuva/rs-uva/raw/master/view/img/docs/print-26.jpg)
+> Atualize o projeto novamente
+---
+![alt text](https://github.com/labsoftwareuva/rs-uva/raw/master/view/img/docs/print-27.jpg)
+> Clique no botão _Ok_
+---
+![alt text](https://github.com/labsoftwareuva/rs-uva/raw/master/view/img/docs/print-28.jpg)
+> 1. Clique com o botão direito na pasta raiz
+> 2. Clique no menu dropdown da opção _Run_
+> 3. Selecione a opção _Run as > Run on Server_
+---
+![alt text](https://github.com/labsoftwareuva/rs-uva/raw/master/view/img/docs/print-31.jpg)
+> 1. Clique na pasta _Apache_
+> 2. Role o scroll até chegar na opção _Tomcat v8.0 Server_
+> 3. Clique no botão _Next_
+---
+![alt text](https://github.com/labsoftwareuva/rs-uva/raw/master/view/img/docs/print-33.jpg)
+> 1. Escolha um diretório em sua máquina para instalação do _Tomcat_
+> 2. Clique no botão _Download and Install..._
+> 3. Clique no botão _Finish_
+---
+![alt text](https://github.com/labsoftwareuva/rs-uva/raw/master/view/img/docs/print-34.jpg)
+> 1. Copie o link _http://localhost:8080/rsuva_ e cole em seu navegador
+---
+![alt text](https://github.com/labsoftwareuva/rs-uva/raw/master/view/img/docs/print-35.jpg)
+---
+![alt text](https://github.com/labsoftwareuva/rs-uva/raw/master/view/img/docs/print-36.jpg)
+---
+![alt text](https://github.com/labsoftwareuva/rs-uva/raw/master/view/img/docs/print-37.jpg)
+---
