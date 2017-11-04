@@ -12,7 +12,7 @@ public interface ExperienciaProfissionalDAO {
 
 	public boolean excluir(ExperienciaProfissional experienciaProfissional);
 	
-	public List<ExperienciaProfissional> listar(int id);
+	public List<ExperienciaProfissional> listar();
 	
 	public ExperienciaProfissional getExperienciaProfissional(int id);
 }
