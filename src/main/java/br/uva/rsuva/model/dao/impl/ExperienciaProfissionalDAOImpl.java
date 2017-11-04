@@ -152,7 +152,7 @@ public class ExperienciaProfissionalDAOImpl implements ExperienciaProfissionalDA
 	}
 
 	@Override
-	public List<ExperienciaProfissional> listar() {
+	public List<ExperienciaProfissional> listar(int id) {
 		List<ExperienciaProfissional> experiencias = new ArrayList<>();
 		
 		StringBuilder sbQuery = new StringBuilder();
@@ -164,7 +164,7 @@ public class ExperienciaProfissionalDAOImpl implements ExperienciaProfissionalDA
 		try{
 			
 			stmt = conexao.prepareStatement(sbQuery.toString());
-			//stmt.setInt(1, id);
+			stmt.setInt(1, id);
 			ResultSet rs = stmt.executeQuery();
 		    while(rs.next()){
 			    ExperienciaProfissional experienciaProfissional = new ExperienciaProfissional();

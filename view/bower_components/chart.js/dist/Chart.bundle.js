@@ -1,7 +1,7 @@
 /*!
  * Chart.js
  * http://chartjs.org/
- * Version: 2.7.1
+ * Version: 2.7.0
  *
  * Copyright 2017 Nick Downie
  * Released under the MIT license
@@ -8523,14 +8523,6 @@ module.exports = function(Chart) {
 
 			me.updateDatasets();
 
-			// Need to reset tooltip in case it is displayed with elements that are removed
-			// after update.
-			me.tooltip.initialize();
-
-			// Last active contains items that were previously in the tooltip.
-			// When we reset the tooltip, we need to clear it
-			me.lastActive = [];
-
 			// Do this before render so that any plugins that need final scale updates can use it
 			plugins.notify(me, 'afterUpdate');
 
@@ -8688,7 +8680,9 @@ module.exports = function(Chart) {
 			}
 
 			me.drawDatasets(easingValue);
-			me._drawTooltip(easingValue);
+
+			// Finally draw the tooltip
+			me.tooltip.draw();
 
 			plugins.notify(me, 'afterDraw', [easingValue]);
 		},
@@ -8751,28 +8745,6 @@ module.exports = function(Chart) {
 			meta.controller.draw(easingValue);
 
 			plugins.notify(me, 'afterDatasetDraw', [args]);
-		},
-
-		/**
-		 * Draws tooltip unless a plugin returns `false` to the `beforeTooltipDraw`
-		 * hook, in which case, plugins will not be called on `afterTooltipDraw`.
-		 * @private
-		 */
-		_drawTooltip: function(easingValue) {
-			var me = this;
-			var tooltip = me.tooltip;
-			var args = {
-				tooltip: tooltip,
-				easingValue: easingValue
-			};
-
-			if (plugins.notify(me, 'beforeTooltipDraw', [args]) === false) {
-				return;
-			}
-
-			tooltip.draw();
-
-			plugins.notify(me, 'afterTooltipDraw', [args]);
 		},
 
 		// Get the single element that was clicked on
@@ -9531,6 +9503,16 @@ module.exports = function(Chart) {
 
 	// -- Basic js utility methods
 
+	helpers.extend = function(base) {
+		var setFn = function(value, key) {
+			base[key] = value;
+		};
+		for (var i = 1, ilen = arguments.length; i < ilen; i++) {
+			helpers.each(arguments[i], setFn);
+		}
+		return base;
+	};
+
 	helpers.configMerge = function(/* objects ... */) {
 		return helpers.merge(helpers.clone(arguments[0]), [].slice.call(arguments, 1), {
 			merger: function(key, target, source, options) {
@@ -9636,7 +9618,29 @@ module.exports = function(Chart) {
 			}
 		}
 	};
+	helpers.inherits = function(extensions) {
+		// Basic javascript inheritance based on the model created in Backbone.js
+		var me = this;
+		var ChartElement = (extensions && extensions.hasOwnProperty('constructor')) ? extensions.constructor : function() {
+			return me.apply(this, arguments);
+		};
 
+		var Surrogate = function() {
+			this.constructor = ChartElement;
+		};
+		Surrogate.prototype = me.prototype;
+		ChartElement.prototype = new Surrogate();
+
+		ChartElement.extend = helpers.inherits;
+
+		if (extensions) {
+			helpers.extend(ChartElement.prototype, extensions);
+		}
+
+		ChartElement.__super__ = me.prototype;
+
+		return ChartElement;
+	};
 	// -- Math methods
 	helpers.isNumber = function(n) {
 		return !isNaN(parseFloat(n)) && isFinite(n);
@@ -10341,7 +10345,7 @@ module.exports = {
 		 * @private
 		 */
 		'x-axis': function(chart, e) {
-			return indexMode(chart, e, {intersect: false});
+			return indexMode(chart, e, {intersect: true});
 		},
 
 		/**
@@ -11257,27 +11261,6 @@ module.exports = function(Chart) {
 	 * @param {Object} options - The plugin options.
 	 */
 	/**
-  	 * @method IPlugin#beforeTooltipDraw
-	 * @desc Called before drawing the `tooltip`. If any plugin returns `false`,
-	 * the tooltip drawing is cancelled until another `render` is triggered.
-	 * @param {Chart} chart - The chart instance.
-	 * @param {Object} args - The call arguments.
-	 * @param {Object} args.tooltip - The tooltip.
-	 * @param {Number} args.easingValue - The current animation value, between 0.0 and 1.0.
-	 * @param {Object} options - The plugin options.
-	 * @returns {Boolean} `false` to cancel the chart tooltip drawing.
-  	 */
-	/**
- 	 * @method IPlugin#afterTooltipDraw
-  	 * @desc Called after drawing the `tooltip`. Note that this hook will not
- 	 * be called if the tooltip drawing has been previously cancelled.
- 	 * @param {Chart} chart - The chart instance.
- 	 * @param {Object} args - The call arguments.
- 	 * @param {Object} args.tooltip - The tooltip.
-	 * @param {Number} args.easingValue - The current animation value, between 0.0 and 1.0.
- 	 * @param {Object} options - The plugin options.
- 	 */
-	/**
 	 * @method IPlugin#beforeEvent
  	 * @desc Called before processing the specified `event`. If any plugin returns `false`,
 	 * the event will be discarded.
@@ -11868,33 +11851,17 @@ module.exports = function(Chart) {
 			return rawValue;
 		},
 
-		/**
-		 * Used to get the value to display in the tooltip for the data at the given index
-		 * @param index
-		 * @param datasetIndex
-		 */
+		// Used to get the value to display in the tooltip for the data at the given index
+		// function getLabelForIndex(index, datasetIndex)
 		getLabelForIndex: helpers.noop,
 
-		/**
-		 * Returns the location of the given data point. Value can either be an index or a numerical value
-		 * The coordinate (0, 0) is at the upper-left corner of the canvas
-		 * @param value
-		 * @param index
-		 * @param datasetIndex
-		 */
+		// Used to get data value locations.  Value can either be an index or a numerical value
 		getPixelForValue: helpers.noop,
 
-		/**
-		 * Used to get the data value from a given pixel. This is the inverse of getPixelForValue
-		 * The coordinate (0, 0) is at the upper-left corner of the canvas
-		 * @param pixel
-		 */
+		// Used to get the data value from a given pixel. This is the inverse of getPixelForValue
 		getValueForPixel: helpers.noop,
 
-		/**
-		 * Returns the location of the tick at the given index
-		 * The coordinate (0, 0) is at the upper-left corner of the canvas
-		 */
+		// Used for tick location, should
 		getPixelForTick: function(index) {
 			var me = this;
 			var offset = me.options.offset;
@@ -11915,10 +11882,7 @@ module.exports = function(Chart) {
 			return me.top + (index * (innerHeight / (me._ticks.length - 1)));
 		},
 
-		/**
-		 * Utility for getting the pixel location of a percentage of scale
-		 * The coordinate (0, 0) is at the upper-left corner of the canvas
-		 */
+		// Utility for getting the pixel location of a percentage of scale
 		getPixelForDecimal: function(decimal) {
 			var me = this;
 			if (me.isHorizontal()) {
@@ -11932,10 +11896,6 @@ module.exports = function(Chart) {
 			return me.top + (decimal * me.height);
 		},
 
-		/**
-		 * Returns the pixel for the minimum chart value
-		 * The coordinate (0, 0) is at the upper-left corner of the canvas
-		 */
 		getBasePixel: function() {
 			return this.getPixelForValue(this.getBaseValue());
 		},
@@ -11992,7 +11952,7 @@ module.exports = function(Chart) {
 
 				// Since we always show the last tick,we need may need to hide the last shown one before
 				shouldSkip = (skipRatio > 1 && i % skipRatio > 0) || (i % skipRatio === 0 && i + skipRatio >= tickCount);
-				if (shouldSkip && i !== tickCount - 1) {
+				if (shouldSkip && i !== tickCount - 1 || helpers.isNullOrUndef(tick.label)) {
 					// leave tick in place but make sure it's not displayed (#4635)
 					delete tick.label;
 				}
@@ -12042,7 +12002,7 @@ module.exports = function(Chart) {
 
 			helpers.each(ticks, function(tick, index) {
 				// autoskipper skipped this tick (#4635)
-				if (helpers.isNullOrUndef(tick.label)) {
+				if (tick.label === undefined) {
 					return;
 				}
 
@@ -12900,7 +12860,6 @@ module.exports = function(Chart) {
 	Chart.Tooltip = Element.extend({
 		initialize: function() {
 			this._model = getBaseModel(this._options);
-			this._lastActive = [];
 		},
 
 		// Get the title
@@ -13012,7 +12971,7 @@ module.exports = function(Chart) {
 
 				var labelColors = [];
 				var labelTextColors = [];
-				tooltipPosition = Chart.Tooltip.positioners[opts.position].call(me, active, me._eventPosition);
+				tooltipPosition = Chart.Tooltip.positioners[opts.position](active, me._eventPosition);
 
 				var tooltipItems = [];
 				for (i = 0, len = active.length; i < len; ++i) {
@@ -13194,7 +13153,6 @@ module.exports = function(Chart) {
 			};
 
 			// Before body lines
-			ctx.fillStyle = mergeOpacity(vm.bodyFontColor, opacity);
 			helpers.each(vm.beforeBody, fillLineOfText);
 
 			var drawColorBoxes = vm.displayColors;
@@ -13202,8 +13160,6 @@ module.exports = function(Chart) {
 
 			// Draw body lines now
 			helpers.each(body, function(bodyItem, i) {
-				var textColor = mergeOpacity(vm.labelTextColors[i], opacity);
-				ctx.fillStyle = textColor;
 				helpers.each(bodyItem.before, fillLineOfText);
 
 				helpers.each(bodyItem.lines, function(line) {
@@ -13221,6 +13177,7 @@ module.exports = function(Chart) {
 						// Inner square
 						ctx.fillStyle = mergeOpacity(vm.labelColors[i].backgroundColor, opacity);
 						ctx.fillRect(pt.x + 1, pt.y + 1, bodyFontSize - 2, bodyFontSize - 2);
+						var textColor = mergeOpacity(vm.labelTextColors[i], opacity);
 						ctx.fillStyle = textColor;
 					}
 
@@ -14051,7 +14008,7 @@ var exports = module.exports = {
 	drawPoint: function(ctx, style, radius, x, y) {
 		var type, edgeLength, xOffset, yOffset, height, size;
 
-		if (style && typeof style === 'object') {
+		if (typeof style === 'object') {
 			type = style.toString();
 			if (type === '[object HTMLImageElement]' || type === '[object HTMLCanvasElement]') {
 				ctx.drawImage(style, x - style.width / 2, y - style.height / 2, style.width, style.height);
@@ -14470,48 +14427,6 @@ var helpers = {
 	 */
 	mergeIf: function(target, source) {
 		return helpers.merge(target, source, {merger: helpers._mergerIf});
-	},
-
-	/**
-	 * Applies the contents of two or more objects together into the first object.
-	 * @param {Object} target - The target object in which all objects are merged into.
-	 * @param {Object} arg1 - Object containing additional properties to merge in target.
-	 * @param {Object} argN - Additional objects containing properties to merge in target.
-	 * @returns {Object} The `target` object.
-	 */
-	extend: function(target) {
-		var setFn = function(value, key) {
-			target[key] = value;
-		};
-		for (var i = 1, ilen = arguments.length; i < ilen; ++i) {
-			helpers.each(arguments[i], setFn);
-		}
-		return target;
-	},
-
-	/**
-	 * Basic javascript inheritance based on the model created in Backbone.js
-	 */
-	inherits: function(extensions) {
-		var me = this;
-		var ChartElement = (extensions && extensions.hasOwnProperty('constructor')) ? extensions.constructor : function() {
-			return me.apply(this, arguments);
-		};
-
-		var Surrogate = function() {
-			this.constructor = ChartElement;
-		};
-
-		Surrogate.prototype = me.prototype;
-		ChartElement.prototype = new Surrogate();
-		ChartElement.extend = helpers.inherits;
-
-		if (extensions) {
-			helpers.extend(ChartElement.prototype, extensions);
-		}
-
-		ChartElement.__super__ = me.prototype;
-		return ChartElement;
 	}
 };
 
@@ -15171,13 +15086,6 @@ function watchForRender(node, handler) {
 	helpers.each(ANIMATION_START_EVENTS, function(type) {
 		addEventListener(node, type, proxy);
 	});
-
-	// #4737: Chrome might skip the CSS animation when the CSS_RENDER_MONITOR class
-	// is removed then added back immediately (same animation frame?). Accessing the
-	// `offsetParent` property will force a reflow and re-evaluate the CSS animation.
-	// https://gist.github.com/paulirish/5d52fb081b3570c81e3a#box-metrics
-	// https://github.com/chartjs/Chart.js/issues/4737
-	expando.reflow = !!node.offsetParent;
 
 	node.classList.add(CSS_RENDER_MONITOR);
 }
@@ -17862,47 +17770,47 @@ var MAX_INTEGER = Number.MAX_SAFE_INTEGER || 9007199254740991;
 
 var INTERVALS = {
 	millisecond: {
-		common: true,
+		major: true,
 		size: 1,
 		steps: [1, 2, 5, 10, 20, 50, 100, 250, 500]
 	},
 	second: {
-		common: true,
+		major: true,
 		size: 1000,
 		steps: [1, 2, 5, 10, 30]
 	},
 	minute: {
-		common: true,
+		major: true,
 		size: 60000,
 		steps: [1, 2, 5, 10, 30]
 	},
 	hour: {
-		common: true,
+		major: true,
 		size: 3600000,
 		steps: [1, 2, 3, 6, 12]
 	},
 	day: {
-		common: true,
+		major: true,
 		size: 86400000,
 		steps: [1, 2, 5]
 	},
 	week: {
-		common: false,
+		major: false,
 		size: 604800000,
 		steps: [1, 2, 3, 4]
 	},
 	month: {
-		common: true,
+		major: true,
 		size: 2.628e9,
 		steps: [1, 2, 3]
 	},
 	quarter: {
-		common: false,
+		major: false,
 		size: 7.884e9,
 		steps: [1, 2, 3, 4]
 	},
 	year: {
-		common: true,
+		major: true,
 		size: 3.154e10
 	}
 };
@@ -18102,10 +18010,7 @@ function determineStepSize(min, max, unit, capacity) {
 	return factor;
 }
 
-/**
- * Figures out what unit results in an appropriate number of auto-generated ticks
- */
-function determineUnitForAutoTicks(minUnit, min, max, capacity) {
+function determineUnit(minUnit, min, max, capacity) {
 	var ilen = UNITS.length;
 	var i, interval, factor;
 
@@ -18113,7 +18018,7 @@ function determineUnitForAutoTicks(minUnit, min, max, capacity) {
 		interval = INTERVALS[UNITS[i]];
 		factor = interval.steps ? interval.steps[interval.steps.length - 1] : MAX_INTEGER;
 
-		if (interval.common && Math.ceil((max - min) / (factor * interval.size)) <= capacity) {
+		if (Math.ceil((max - min) / (factor * interval.size)) <= capacity) {
 			return UNITS[i];
 		}
 	}
@@ -18121,27 +18026,9 @@ function determineUnitForAutoTicks(minUnit, min, max, capacity) {
 	return UNITS[ilen - 1];
 }
 
-/**
- * Figures out what unit to format a set of ticks with
- */
-function determineUnitForFormatting(ticks, minUnit, min, max) {
-	var duration = moment.duration(moment(max).diff(moment(min)));
-	var ilen = UNITS.length;
-	var i, unit;
-
-	for (i = ilen - 1; i >= UNITS.indexOf(minUnit); i--) {
-		unit = UNITS[i];
-		if (INTERVALS[unit].common && duration.as(unit) >= ticks.length) {
-			return unit;
-		}
-	}
-
-	return UNITS[minUnit ? UNITS.indexOf(minUnit) : 0];
-}
-
 function determineMajorUnit(unit) {
 	for (var i = UNITS.indexOf(unit) + 1, ilen = UNITS.length; i < ilen; ++i) {
-		if (INTERVALS[UNITS[i]].common) {
+		if (INTERVALS[UNITS[i]].major) {
 			return UNITS[i];
 		}
 	}
@@ -18153,10 +18040,8 @@ function determineMajorUnit(unit) {
  * Important: this method can return ticks outside the min and max range, it's the
  * responsibility of the calling code to clamp values if needed.
  */
-function generate(min, max, capacity, options) {
+function generate(min, max, minor, major, capacity, options) {
 	var timeOpts = options.time;
-	var minor = timeOpts.unit || determineUnitForAutoTicks(timeOpts.minUnit, min, max, capacity);
-	var major = determineMajorUnit(minor);
 	var stepSize = helpers.valueOrDefault(timeOpts.stepSize, timeOpts.unitStepSize);
 	var weekday = minor === 'week' ? timeOpts.isoWeekday : false;
 	var majorTicksEnabled = options.ticks.major.enabled;
@@ -18353,8 +18238,8 @@ module.exports = function(Chart) {
 			var me = this;
 			var chart = me.chart;
 			var timeOpts = me.options.time;
-			var min = MAX_INTEGER;
-			var max = MIN_INTEGER;
+			var min = parse(timeOpts.min, me) || MAX_INTEGER;
+			var max = parse(timeOpts.max, me) || MIN_INTEGER;
 			var timestamps = [];
 			var datasets = [];
 			var labels = [];
@@ -18401,9 +18286,6 @@ module.exports = function(Chart) {
 				max = Math.max(max, timestamps[timestamps.length - 1]);
 			}
 
-			min = parse(timeOpts.min, me) || min;
-			max = parse(timeOpts.max, me) || max;
-
 			// In case there is no valid min/max, let's use today limits
 			min = min === MAX_INTEGER ? +moment().startOf('day') : min;
 			max = max === MIN_INTEGER ? +moment().endOf('day') + 1 : max;
@@ -18428,6 +18310,10 @@ module.exports = function(Chart) {
 			var max = me.max;
 			var options = me.options;
 			var timeOpts = options.time;
+			var formats = timeOpts.displayFormats;
+			var capacity = me.getLabelCapacity(min);
+			var unit = timeOpts.unit || determineUnit(timeOpts.minUnit, min, max, capacity);
+			var majorUnit = determineMajorUnit(unit);
 			var timestamps = [];
 			var ticks = [];
 			var i, ilen, timestamp;
@@ -18441,7 +18327,7 @@ module.exports = function(Chart) {
 				break;
 			case 'auto':
 			default:
-				timestamps = generate(min, max, me.getLabelCapacity(min), options);
+				timestamps = generate(min, max, unit, majorUnit, capacity, options);
 			}
 
 			if (options.bounds === 'ticks' && timestamps.length) {
@@ -18465,12 +18351,14 @@ module.exports = function(Chart) {
 			me.max = max;
 
 			// PRIVATE
-			me._unit = timeOpts.unit || determineUnitForFormatting(ticks, timeOpts.minUnit, me.min, me.max);
-			me._majorUnit = determineMajorUnit(me._unit);
+			me._unit = unit;
+			me._majorUnit = majorUnit;
+			me._minorFormat = formats[unit];
+			me._majorFormat = formats[majorUnit];
 			me._table = buildLookupTable(me._timestamps.data, min, max, options.distribution);
 			me._offsets = computeOffsets(me._table, ticks, min, max, options);
 
-			return ticksFromTimestamps(ticks, me._majorUnit);
+			return ticksFromTimestamps(ticks, majorUnit);
 		},
 
 		getLabelForIndex: function(index, datasetIndex) {
@@ -18494,18 +18382,16 @@ module.exports = function(Chart) {
 		 * Function to format an individual tick mark
 		 * @private
 		 */
-		tickFormatFunction: function(tick, index, ticks, formatOverride) {
+		tickFormatFunction: function(tick, index, ticks) {
 			var me = this;
 			var options = me.options;
 			var time = tick.valueOf();
-			var formats = options.time.displayFormats;
-			var minorFormat = formats[me._unit];
 			var majorUnit = me._majorUnit;
-			var majorFormat = formats[majorUnit];
-			var majorTime = tick.clone().startOf(majorUnit).valueOf();
+			var majorFormat = me._majorFormat;
+			var majorTime = tick.clone().startOf(me._majorUnit).valueOf();
 			var majorTickOpts = options.ticks.major;
 			var major = majorTickOpts.enabled && majorUnit && majorFormat && time === majorTime;
-			var label = tick.format(formatOverride ? formatOverride : major ? majorFormat : minorFormat);
+			var label = tick.format(major ? majorFormat : me._minorFormat);
 			var tickOpts = major ? majorTickOpts : options.ticks.minor;
 			var formatter = helpers.valueOrDefault(tickOpts.callback, tickOpts.userCallback);
 
@@ -18591,9 +18477,9 @@ module.exports = function(Chart) {
 		getLabelCapacity: function(exampleTime) {
 			var me = this;
 
-			var formatOverride = me.options.time.displayFormats.millisecond;	// Pick the longest format for guestimation
+			me._minorFormat = me.options.time.displayFormats.millisecond;	// Pick the longest format for guestimation
 
-			var exampleLabel = me.tickFormatFunction(moment(exampleTime), 0, [], formatOverride);
+			var exampleLabel = me.tickFormatFunction(moment(exampleTime), 0, []);
 			var tickLabelWidth = me.getLabelWidth(exampleLabel);
 			var innerWidth = me.isHorizontal() ? me.width : me.height;
 

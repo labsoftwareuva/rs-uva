@@ -215,7 +215,7 @@ module.exports = {
 		 * @private
 		 */
 		'x-axis': function(chart, e) {
-			return indexMode(chart, e, {intersect: false});
+			return indexMode(chart, e, {intersect: true});
 		},
 
 		/**

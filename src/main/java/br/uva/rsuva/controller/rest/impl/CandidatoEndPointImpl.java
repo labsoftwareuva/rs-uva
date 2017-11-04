@@ -45,7 +45,7 @@ public class CandidatoEndPointImpl implements CandidatoEndPoint{
 		Candidato candidato = candidatoDAO.getCandidato(id);
 		
 		candidato.setFormacoes(formacaoDAO.listar(id));
-		candidato.setExperienciasProfissionais(experienciaProfissionalDAO.listar());
+		candidato.setExperienciasProfissionais(experienciaProfissionalDAO.listar(id));
 		candidato.setFormacoesComplementares(formacaoComplementarDAO.listar(id));
 		
 		return candidato;
@@ -83,23 +83,15 @@ public class CandidatoEndPointImpl implements CandidatoEndPoint{
 	}
 
 	@Override
-	@POST
-	@Path("alterar")
-	@Produces("application/json")
-	@Consumes({MediaType.APPLICATION_JSON})
 	public boolean alterarUsuario(Candidato candidato) {
-		candidatoDAO = new CandidatoDAOImpl();
-		return candidatoDAO.alterar(candidato);
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 	@Override
-	@POST
-	@Path("excluir")
-	@Produces("application/json")
-	@Consumes({MediaType.APPLICATION_JSON})
 	public boolean removerUsuario(Candidato candidato) {
-		candidatoDAO = new CandidatoDAOImpl();
-		return candidatoDAO.excluir(candidato);
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 	

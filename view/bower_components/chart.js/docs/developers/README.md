@@ -22,12 +22,7 @@ Latest builds are available for testing at:
 
 # Browser support
 
-Chart.js offers support for the following browsers:
-* Chrome 50+
-* Firefox 45+
-* Internet Explorer 11
-* Edge 14+
-* Safari 9+
+Chart.js offers support for all browsers where canvas is supported.
 
 Browser support for the canvas element is available in all modern & major mobile browsers. [CanIUse](http://caniuse.com/#feat=canvas)
 

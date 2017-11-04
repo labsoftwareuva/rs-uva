@@ -538,33 +538,17 @@ module.exports = function(Chart) {
 			return rawValue;
 		},
 
-		/**
-		 * Used to get the value to display in the tooltip for the data at the given index
-		 * @param index
-		 * @param datasetIndex
-		 */
+		// Used to get the value to display in the tooltip for the data at the given index
+		// function getLabelForIndex(index, datasetIndex)
 		getLabelForIndex: helpers.noop,
 
-		/**
-		 * Returns the location of the given data point. Value can either be an index or a numerical value
-		 * The coordinate (0, 0) is at the upper-left corner of the canvas
-		 * @param value
-		 * @param index
-		 * @param datasetIndex
-		 */
+		// Used to get data value locations.  Value can either be an index or a numerical value
 		getPixelForValue: helpers.noop,
 
-		/**
-		 * Used to get the data value from a given pixel. This is the inverse of getPixelForValue
-		 * The coordinate (0, 0) is at the upper-left corner of the canvas
-		 * @param pixel
-		 */
+		// Used to get the data value from a given pixel. This is the inverse of getPixelForValue
 		getValueForPixel: helpers.noop,
 
-		/**
-		 * Returns the location of the tick at the given index
-		 * The coordinate (0, 0) is at the upper-left corner of the canvas
-		 */
+		// Used for tick location, should
 		getPixelForTick: function(index) {
 			var me = this;
 			var offset = me.options.offset;
@@ -585,10 +569,7 @@ module.exports = function(Chart) {
 			return me.top + (index * (innerHeight / (me._ticks.length - 1)));
 		},
 
-		/**
-		 * Utility for getting the pixel location of a percentage of scale
-		 * The coordinate (0, 0) is at the upper-left corner of the canvas
-		 */
+		// Utility for getting the pixel location of a percentage of scale
 		getPixelForDecimal: function(decimal) {
 			var me = this;
 			if (me.isHorizontal()) {
@@ -602,10 +583,6 @@ module.exports = function(Chart) {
 			return me.top + (decimal * me.height);
 		},
 
-		/**
-		 * Returns the pixel for the minimum chart value
-		 * The coordinate (0, 0) is at the upper-left corner of the canvas
-		 */
 		getBasePixel: function() {
 			return this.getPixelForValue(this.getBaseValue());
 		},
@@ -662,7 +639,7 @@ module.exports = function(Chart) {
 
 				// Since we always show the last tick,we need may need to hide the last shown one before
 				shouldSkip = (skipRatio > 1 && i % skipRatio > 0) || (i % skipRatio === 0 && i + skipRatio >= tickCount);
-				if (shouldSkip && i !== tickCount - 1) {
+				if (shouldSkip && i !== tickCount - 1 || helpers.isNullOrUndef(tick.label)) {
 					// leave tick in place but make sure it's not displayed (#4635)
 					delete tick.label;
 				}
@@ -712,7 +689,7 @@ module.exports = function(Chart) {
 
 			helpers.each(ticks, function(tick, index) {
 				// autoskipper skipped this tick (#4635)
-				if (helpers.isNullOrUndef(tick.label)) {
+				if (tick.label === undefined) {
 					return;
 				}
 
