@@ -144,6 +144,13 @@ angular
       label: 'Incluir'
     }
   })
+  .state('app.oportunidade', {
+    url: '/oportunidade/',
+    templateUrl: 'views/oportunidade/oportunidade.template.html',
+    ncyBreadcrumb: {
+      label: 'Oportunidades'
+    }
+  })
   .state('app.formacaoAcademica', {
     url: '/curriculo/formacaoAcademica',
     templateUrl: 'views/curriculo/formacao_academica.html',

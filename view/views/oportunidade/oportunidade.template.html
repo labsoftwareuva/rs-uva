@@ -1,0 +1,51 @@
+<div class="animated fadeIn" ng-controller="OportunidadeController">
+    <div class="row">
+        <div class="col-md-12">
+        	<div class="card">
+        		<!-- Card Header -->
+        		<div class="card-header">
+        			<strong>Mural de Oportunidades <span class="badge badge-info">{{ oportunidades.length }}</span></strong>
+                    <strong class="pull-right"></strong>
+				</div>
+				<!-- Card Body -->
+                <div class="card-block">
+                	<div class="row">
+	                	<div class="col-sm-12">
+	                		<table class="table table-hover table-outline mb-0 table-responsive">
+	                			<thead class="thead-default">
+	                				<tr>
+	                					<th>Cargo</th>
+                                       	<th>Descri&ccedil;&atilde;o</th>
+                                       	<th>Detalhes</th>
+                                       	<th>Cidade</th>
+                                       	<th>Estado</th>
+                                       	<th>Criado em</th>
+                                       	<th></th>
+                                   </tr>
+	                			</thead>
+	                			<tbody>
+	                				<tr ng-repeat="oportunidade in oportunidades">
+	                					<td>
+	                						{{oportunidade.cargo}}
+	                						<span class="text-muted">{{oportunidade.area}}</span>
+	                					</td>
+	                					<td>{{oportunidade.descricao}}</td>
+	                					<td>
+	                						<button type="button" class="btn btn-sm btn-secondary">
+	                							<i class="icon-magnifier"></i>
+                							</button>
+	                					</td>
+	                					<td>{{oportunidade.cidade}}</td>
+	                					<td>{{oportunidade.estado}}</td>
+	                					<td>{{oportunidade.criacao}}</td>
+	                					<td><button type="button" class="btn btn-primary"><i class="icon-like"></i> Candidatar</button></td>
+	                				</tr>
+	                			</tbody>
+                            </table>
+						</div>
+					</div>
+                </div>
+			</div>
+        </div>
+	</div>
+</div>

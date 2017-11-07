@@ -23,26 +23,12 @@
                 </ul>
             </li>
 
-            <!-- Oportunidade -->
-            <li class="nav-item nav-dropdown" ng-class="{open: $state.includes('app.components')}">
-                <a class="nav-link nav-dropdown-toggle" ng-class="{active: $state.includes('app.components')}" href="#"><i class="icon-login"></i> Oportunidade</a>
-                <ul class="nav-dropdown-items">
-                    <li class="nav-item" style="margin-left:2rem">
-                        <a class="nav-link" ui-sref-active="active" ui-sref="#"><i class="icon-plus"></i> Incluir</a>
-                    </li>
-                    <li class="nav-item" style="margin-left:2rem">
-                        <a class="nav-link" ui-sref-active="active" ui-sref="#"><i class="icon-note"></i> Alterar</a>
-                    </li>
-                    <li class="nav-item" style="margin-left:2rem">
-                        <a class="nav-link" ui-sref-active="active" ui-sref="#"><i class="icon-close"></i> Excluir</a>
-                    </li>
-                    <li class="nav-item" style="margin-left:2rem">
-                        <a class="nav-link" ui-sref-active="active" ui-sref="#"><i class="icon-eye"></i> Visualizar</a>
-                    </li>
-                </ul>
+            <!-- OPORTUNIDADE -->
+            <li class="nav-item" ng-class="{open: $state.includes('app.oportunidade')}">
+                <a class="nav-link" ng-class="{active: $state.includes('app.oportunidade')}" ui-sref-active="active" ui-sref="app.oportunidade"><i class="icon-doc"></i> Oportunidade</a>
             </li>
 
-            <!-- PROCESSO SELETIVO -->
+			<!-- PROCESSO SELETIVO -->
             <li class="nav-item nav-dropdown" ng-class="{open: $state.includes('app.components')}">
                 <a class="nav-link nav-dropdown-toggle" ng-class="{active: $state.includes('app.components')}" href="#"><i class="icon-user-following"></i> Processo seletivo</a>
                 <ul class="nav-dropdown-items">

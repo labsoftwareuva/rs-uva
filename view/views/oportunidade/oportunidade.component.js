@@ -1,0 +1,24 @@
+'use strict';
+
+// Registra o componente 'oportunidadeLista', juntamente com o controlador e o modelo associados
+angular.
+module('app').
+component('oportunidade', {
+    templateUrl: 'oportunidade/oportunidade.template.html',
+    controller: function OportunidadeController($scope) {
+	        $scope.oportunidades = [
+	            {
+	                name: 'Nexus S',
+	                snippet: 'Fast just got faster with Nexus S.'
+	            },
+	            {
+	                name: 'Motorola XOOM™ with Wi-Fi',
+	                snippet: 'The Next, Next Generation tablet.'
+	            },
+	            {
+	                name: 'MOTOROLA XOOM™',
+	                snippet: 'The Next, Next Generation tablet.'
+	            }
+	        ];
+      }
+});
