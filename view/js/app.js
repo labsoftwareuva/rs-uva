@@ -18,8 +18,12 @@ angular
   'ncy-angular-breadcrumb',
   'angular-loading-bar',
   'ngResource',
+  'ngMaterial',
   'oportunidadeModule'
 ])
+.config(function($mdThemingProvider) {
+  $mdThemingProvider.theme('default')
+})
 .config(['cfpLoadingBarProvider', function(cfpLoadingBarProvider) {
   cfpLoadingBarProvider.includeSpinner = false;
   cfpLoadingBarProvider.latencyThreshold = 1;

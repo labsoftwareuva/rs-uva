@@ -1,31 +1,14 @@
-<div class="card col-lg-4 col-md-4 col-sm-6" ng-repeat="oportunidade in $ctrl.oportunidades">
-	<div class="card-header">
-		Teste
-	</div>
-	<div class="block">
-		<div class="">
-			{{oportunidade.cargo}}
-			<span class="text-muted">{{oportunidade.area}}</span>
-		</div>
-		<div class="">
-			{{oportunidade.descricao}}
-		</div>
-		<div class="">
-			<button type="button" class="btn btn-sm btn-secondary">
-				<i class="icon-magnifier"></i>
-			</button>
-		</div>
-		<div class="">
-			{{oportunidade.cidade}}
-		</div>
-		<div class="">
-			{{oportunidade.estado}}
-		</div>
-		<div class="">
-			{{oportunidade.criacao}}
-		</div>
-		<div>
-			<button type="button" class="btn btn-primary"><i class="icon-like"></i> Candidatar</button>
-		</div>
-	</div>
-</div>
+<md-card ng-repeat="oportunidade in $ctrl.oportunidades" flex>
+ <md-card-content>
+   <h2>{{oportunidade.cargo}} | <span class="text-muted">{{oportunidade.area}}</span></h2>
+   <p>{{oportunidade.descricao}}</p>
+   {{oportunidade.cidade}}
+   {{oportunidade.estado}}
+   {{oportunidade.criacao}}
+ </md-card-content>
+ <md-card-actions layout="row" layout-align="end center">
+   <md-button class="md-primary">Mais detalhes</md-button>
+   <md-button class="md-primary">Candidatar</md-button>
+   <!-- <md-button class="md-primary md-raised">Candidatar</md-button> -->
+ </md-card-actions>
+</md-card>

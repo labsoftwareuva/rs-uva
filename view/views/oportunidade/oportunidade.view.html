@@ -1,7 +1,13 @@
 <div class="animated fadeIn">
     <div class="row">
-    	<div class="col-lg-12">
-        	<oportunidade-lista></oportunidade-lista>
+    	<div class="col-lg-8">
+ 			<oportunidade-lista></oportunidade-lista>
+        </div>
+        <div class="col-lg-4">
+        	Filtros
+        	<md-autocomplete md-no-cache="true" md-selected-item="selectedItem" md-items="item in items" md-search-text="searchText" md-item-text="item.display">
+        		<span>{{ item.display }}</span>
+       		</md-autocomplete>
         </div>
 	</div>
 </div>
