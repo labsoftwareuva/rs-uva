@@ -2,5 +2,5 @@
 
 console.log("Oportunidade Lista Module");
 
-// Registra o componente 'oportunidadeLista', juntamente com o controlador e o modelo associados
+// Define o módulo 'oportunidadeModule'
 var app = angular.module('oportunidadeModule', ['oportunidadeLista']);

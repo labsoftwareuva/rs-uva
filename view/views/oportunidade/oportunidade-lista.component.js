@@ -2,8 +2,8 @@
 
 console.log("Oportunidade Lista Component");
 
-//Define o módulo 'oportunidadeLista'
-var app = angular.module("oportunidadeModule", [])
+// Registra o componente 'oportunidadeLista', atrelado ao seu modulo e juntamente com o controlador associado
+var app = angular.module("oportunidadeLista", [])
 
 app.component("oportunidadeLista", {
 	templateUrl: 'views/oportunidade/_oportunidade-lista.html',
@@ -18,7 +18,7 @@ app.component("oportunidadeLista", {
 		    	estado: 'RJ',
 		    	criacao: '29/04/2017'
 		    },
-		    {
+		    { 
 		    	cargo: 'Analista Contábil',
 		    	area: 'Gerência de Controladoria',
 		    	descricao: 'Analista contábil com experiência em fechamento, obrigações fiscais como ECD, ECF, LALUR, SPED',
