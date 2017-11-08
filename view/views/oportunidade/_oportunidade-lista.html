@@ -1,0 +1,31 @@
+<div class="card col-lg-4 col-md-4 col-sm-6" ng-repeat="oportunidade in $ctrl.oportunidades">
+	<div class="card-header">
+		Teste
+	</div>
+	<div class="block">
+		<div class="">
+			{{oportunidade.cargo}}
+			<span class="text-muted">{{oportunidade.area}}</span>
+		</div>
+		<div class="">
+			{{oportunidade.descricao}}
+		</div>
+		<div class="">
+			<button type="button" class="btn btn-sm btn-secondary">
+				<i class="icon-magnifier"></i>
+			</button>
+		</div>
+		<div class="">
+			{{oportunidade.cidade}}
+		</div>
+		<div class="">
+			{{oportunidade.estado}}
+		</div>
+		<div class="">
+			{{oportunidade.criacao}}
+		</div>
+		<div>
+			<button type="button" class="btn btn-primary"><i class="icon-like"></i> Candidatar</button>
+		</div>
+	</div>
+</div>

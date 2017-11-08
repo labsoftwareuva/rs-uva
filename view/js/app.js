@@ -18,6 +18,7 @@ angular
   'ncy-angular-breadcrumb',
   'angular-loading-bar',
   'ngResource',
+  'oportunidadeModule'
 ])
 .config(['cfpLoadingBarProvider', function(cfpLoadingBarProvider) {
   cfpLoadingBarProvider.includeSpinner = false;

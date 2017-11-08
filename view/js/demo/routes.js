@@ -146,7 +146,7 @@ angular
   })
   .state('app.oportunidade', {
     url: '/oportunidade/',
-    templateUrl: 'views/oportunidade/oportunidade.template.html',
+    templateUrl: 'views/oportunidade/oportunidade.view.html',
     ncyBreadcrumb: {
       label: 'Oportunidades'
     }
