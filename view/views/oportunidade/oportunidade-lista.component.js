@@ -1,6 +1,6 @@
 'use strict';
 
-console.log("Oportunidade Lista Component");
+console.log("Log: Componente 'Oportunidade Lista' carregado com sucesso.");
 
 // Registra o componente 'oportunidadeLista', atrelado ao seu modulo e juntamente com o controlador associado
 var app = angular.module("oportunidadeLista", [])
