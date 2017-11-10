@@ -7,6 +7,7 @@ var app = angular.module("oportunidadeLista", [])
 
 app.component("oportunidadeLista", {
 	templateUrl: 'views/oportunidade/_oportunidade-lista.html',
+	styleUrls: ['views/oportunidade/oportunidade.style.css'],
 	controller: function OportunidadeListaController () {
 		this.oportunidades = [
 			{

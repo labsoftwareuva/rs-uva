@@ -1,14 +1,14 @@
-<md-card ng-repeat="oportunidade in $ctrl.oportunidades" flex>
- <md-card-content>
-   <h2>{{oportunidade.cargo}} | <span class="text-muted">{{oportunidade.area}}</span></h2>
-   <p>{{oportunidade.descricao}}</p>
-   {{oportunidade.cidade}}
-   {{oportunidade.estado}}
-   {{oportunidade.criacao}}
- </md-card-content>
- <md-card-actions layout="row" layout-align="end center">
-   <md-button class="md-primary">Mais detalhes</md-button>
-   <md-button class="md-primary">Candidatar</md-button>
-   <!-- <md-button class="md-primary md-raised">Candidatar</md-button> -->
- </md-card-actions>
-</md-card>
+<div class="animated fadeIn">
+    <div class="row">
+	    <div class="col-sm-6 col-md-4" ng-repeat="oportunidade in $ctrl.oportunidades">
+			<div class="card card-accent-info">
+				<div class="card-header">
+		          {{oportunidade.cargo}}
+		        </div>
+		        <div class="card-block">
+		          {{oportunidade.descricao}}
+		        </div>
+			</div>
+		</div>
+    </div>
+</div>
