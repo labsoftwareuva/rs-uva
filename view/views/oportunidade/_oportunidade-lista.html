@@ -3,11 +3,17 @@
 	    <div class="col-sm-6 col-md-4" ng-repeat="oportunidade in $ctrl.oportunidades">
 			<div class="card card-accent-info">
 				<div class="card-header">
-		          {{oportunidade.cargo}}
-		        </div>
-		        <div class="card-block">
-		          {{oportunidade.descricao}}
-		        </div>
+					{{oportunidade.cargo}}
+					{{oportunidade.areaAtuacao}}
+					{{oportunidade.processo}}
+				</div>
+				<div class="card-block">
+					{{oportunidade.descricao}}
+				</div>
+				<div class="card-footer">
+					{{oportunidade.qtdVagas}}
+					{{oportunidade.salario}}
+				</div>
 			</div>
 		</div>
     </div>
