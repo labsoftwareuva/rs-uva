@@ -11,15 +11,14 @@ var grayLight =     '#818a91';
 var grayLighter =   '#d1d4d7';
 var grayLightest =  '#f8f9fa';
 
-angular
-.module('app', [
-  'ui.router',
-  'oc.lazyLoad',
-  'ncy-angular-breadcrumb',
-  'angular-loading-bar',
-  'ngResource',
-  'ngMaterial',
-  'oportunidadeModule'
+var app = angular.module("app", [
+	'ui.router',
+	'oc.lazyLoad',
+	'ncy-angular-breadcrumb',
+	'angular-loading-bar',
+	'ngResource',
+	'ngMaterial',
+	'oportunidade'
 ])
 .config(function($mdThemingProvider) {
   $mdThemingProvider.theme('default')

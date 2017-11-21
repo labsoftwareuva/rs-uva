@@ -6,16 +6,21 @@ var app = angular.module("oportunidadeLista", [])
 app.component("oportunidadeLista", {
 	templateUrl: 'views/oportunidade/_oportunidade-lista.html',
 	styleUrls: ['views/oportunidade/oportunidade.style.css'],
-	controller: function OportunidadeListaController () {
+	controller: function oportunidadeListaCtrl () {
+		
+		console.log("in controller...");
+		this.novaOportunidade = {};
+		this.info = "";
+		
 		this.oportunidades = [
 			{
                 id: 1,
                 published_at: "2015-08-05T08:40:51.620Z",
                 processo: 123456,
                 areaAtuacao: 1, // Recursos Humanos
-                cargo: "Gerência de RH",
-                descricao: 'Reportandando-se ao Gerente de RH, o candidato deverá ter sólidos conhecimentos em processos seletivos, treinamentos',
-                requisitos: 'Ensino superior completo; experiência na área de gestão de pessoas.',
+                cargo: "Gerencia de RH",
+                descricao: 'Reportandando-se ao Gerente de RH, o candidato devera ter solidos conhecimentos em processos seletivos, treinamentos',
+                requisitos: 'Ensino superior completo; experiencia na area de gestao de pessoas.',
                 beneficios: [
                     { valeTransporte: true },
                     { valeAlimentacao: true },
@@ -140,6 +145,28 @@ app.component("oportunidadeLista", {
                 dataFinal: "01/11/2017",
                 salario: 1010.01
 			},
-		]
+		];
+		
+		this.salvarOportunidade = function(){
+			console.log("Saving..."); 
+			this.oportunidades.push($scope.novaOportunidade);
+			this.info = "Oportunidade cadastrada com sucesso!";
+			this.novaOportunidade = {};
+		};
+
+		this.oportunidadeSelecionada = function(oportunidade){
+			this.oportunidadeClicada = oportunidade;
+		};
+
+		this.removerOportunidade = function(){
+			console.log($scope.oportunidades.indexOf($scope.clickedUser));
+			this.oportunidades.splice($scope.oportunidades.indexOf($scope.oportunidadeClicada), 1);
+			this.info = "User Deleted Successfully!";
+		};
+
+		this.limparInfo = function(){
+			this.info = "";
+		};
+		
 	}
 });

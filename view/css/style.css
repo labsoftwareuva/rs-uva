@@ -33,6 +33,10 @@ figure,
 main {
   display: block;
  }
+ 
+main {
+	background-color: #eee;
+} 
 
 figure {
   margin: 1em 40px; }

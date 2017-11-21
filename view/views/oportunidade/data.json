@@ -1,0 +1,134 @@
+[
+	{
+	    "id": 1,
+	    "published_at": "2015-08-05T08:40:51.620Z",
+	    "processo": 123456,
+	    "areaAtuacao": 1,
+	    "cargo": "Gerência de RH",
+	    "descricao": "Reportandando-se ao Gerente de RH, o candidato deverá ter sólidos conhecimentos em processos seletivos, treinamentos",
+	    "requisitos": "Ensino superior completo; experiência na área de gestão de pessoas.",
+	    "beneficios": [
+	        { "valeTransporte": true },
+	        { "valeAlimentacao": true },
+	        { "valeRefeicao": false },
+	        { "comissaoDeVendas": false },
+	        { "auxilioCombustivel": false },
+	        { "auxilioMoradia": false },
+	        { "planoDeSaude": true }
+	    ],
+	    "qtdVagas": 1,
+	    "dataInicial": "01/10/2017",
+	    "dataFinal": "01/11/2017",
+	    "salario": 1234.56
+	},
+	{
+	    "id": 2,
+	    "published_at": "2015-08-05T08:40:51.620Z",
+	    "processo": 123456,
+	    "areaAtuacao": 3,
+	    "cargo": "Analista Contábil",
+	    "descricao": "Analista contábil com experiência em fechamento, obrigações fiscais como ECD, ECF, LALUR, SPED",
+	    "requisitos": "Ensino superior completo; experiência na área de gestão de pessoas.",
+	    "beneficios": [
+	        { "valeTransporte": true },
+	        { "valeAlimentacao": true },
+	        { "valeRefeicao": false },
+	        { "comissaoDeVendas": false },
+	        { "auxilioCombustivel": false },
+	        { "auxilioMoradia": false },
+	        { "planoDeSaude": true }
+	    ],
+	    "qtdVagas": 1,
+	    "dataInicial": "01/10/2017",
+	    "dataFInal": "01/11/2017",
+	    "salario": 1010.01
+	},
+	{
+	    "id": 3,
+	    "published_at": "2015-08-05T08:40:51.620Z",
+	    "processo": 123456,
+	    "areaAtuacao": 2,
+	    "cargo": "Analista Financeiro",
+		"descricao": "Conhecimento em processos da área financeira, conciliação bancária, CNAB, borderô de pagamentos",
+	    "requisitos": "Ensino superior completo; experiência na área de gestão de pessoas.",
+	    "beneficios": [
+	        { "valeTransporte": true },
+	        { "valeAlimentacao": true },
+	        { "valeRefeicao": false },
+	        { "comissaoDeVendas": false },
+	        { "auxilioCombustivel": false },
+	        { "auxilioMoradia": false },
+	        { "planoDeSaude": true }
+	    ],
+	    "qtdVagas": 1,
+	    "dataInicial": "01/10/2017",
+	    "dataFInal": "01/11/2017",
+	    "salario": 1010.01
+	},
+	{
+	    "id": 4,
+	    "published_at": "2015-08-05T08:40:51.620Z",
+	    "processo": 123456,
+	    "areaAtuacao": 1,
+	    "cargo": "Auxiliar Administrativo",
+		"descricao": "Conhecimento em processos administrativos, processos bancários, pagamentos, recebimentos, emissão de notas fiscais",
+	    "requisitos": "Cursando Ensino superior.",
+	    "beneficios": [
+	        { "valeTransporte": true },
+	        { "valeAlimentacao": true },
+	        { "valeRefeicao": false },
+	        { "comissaoDeVendas": false },
+	        { "auxilioCombustivel": false },
+	        { "auxilioMoradia": false },
+	        { "planoDeSaude": true }
+	    ],
+	    "qtdVagas": 1,
+	    "dataInicial": "01/10/2017",
+	    "dataFInal": "01/11/2017",
+	    "salario": 1010.01
+	},
+	{
+	    "id": 5,
+	    "published_at": "2015-08-05T08:40:51.620Z",
+	    "processo": 123456,
+	    "areaAtuacao": 4,
+	    "cargo": "Analista de Suporte",
+		"descricao": "Prestará suporte aos usuários local e remoto, conhecimento em Windows Server 2008/2012, Ubuntu, Windows 7",
+	    "requisitos": "Ensino superior completo; experiência na área de gestão de pessoas.",
+	    "beneficios": [
+	        { "valeTransporte": true },
+	        { "valeAlimentacao": true },
+	        { "valeRefeicao": false },
+	        { "comissaoDeVendas": false },
+	        { "auxilioCombustivel": false },
+	        { "auxilioMoradia": false },
+	        { "planoDeSaude": true }
+	    ],
+	    "qtdVagas": 1,
+	    "dataInicial": "01/10/2017",
+	    "dataFInal": "01/11/2017",
+	    "salario": 1010.01
+	},
+	{
+	    "id": 6,
+	    "published_at": "2015-08-05T08:40:51.620Z",
+	    "processo": 123456,
+	    "areaAtuacao": 4,
+        "cargo": "Analista de Suporte",
+    	"descricao": "Prestará suporte aos usuários local e remoto, conhecimento em Windows Server 2008/2012, Ubuntu, Windows 7",
+        "requisitos": "Ensino superior completo; experiência na área de gestão de pessoas.",
+        "beneficios": [
+            { "valeTransporte": true },
+            { "valeAlimentacao": true },
+            { "valeRefeicao": false },
+            { "comissaoDeVendas": false },
+            { "auxilioCombustivel": false },
+            { "auxilioMoradia": false },
+            { "planoDeSaude": true }
+        ],
+        "qtdVagas": 1,
+        "dataInicial": "01/10/2017",
+        "dataFInal": "01/11/2017",
+        "salario": 1010.01
+	}
+]

@@ -151,6 +151,20 @@ angular
       label: 'Oportunidades'
     }
   })
+  .state('app.oportunidade-form', {
+    url: '/oportunidade/form',
+    templateUrl: 'views/oportunidade/oportunidade-form.view.html',
+    ncyBreadcrumb: {
+      label: 'Form'
+    }
+  })
+  .state('app.oportunidade-detail', {
+    url: '/oportunidade/detail',
+    templateUrl: 'views/oportunidade/oportunidade-detail.view.html',
+    ncyBreadcrumb: {
+      label: 'Detalhes'
+    }
+  })
   .state('app.formacaoAcademica', {
     url: '/curriculo/formacaoAcademica',
     templateUrl: 'views/curriculo/formacao_academica.html',

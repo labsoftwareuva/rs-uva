@@ -1,0 +1,139 @@
+<div class="animated fadeIn">
+    <div class="row">
+	    <div class="col-sm-6 col-md-8 col-lg-offset-3">
+			<div class="card card-accent-info">
+				<div class="card-block">
+					<form class="form-horizontal">
+					
+						<div class="form-group">
+					    	<label for="inputProcesso" class="control-label">Processo seletivo</label>
+					    	<input type="text" class="form-control disabled" id="inputProcesso" value="v157925" disabled>
+					  	</div>
+						
+						<div class="row">
+							<div class="form-group col-lg-6">
+						    	<label for="inputAreaAtuacao" class="control-label">Área de atuação</label>
+						    	<select class="form-control">
+						    		<option>Selecione uma área</option>
+						    		<option>1. Recursos Humanos</option>
+						    		<option>2. Contabilidade</option>
+						    		<option>3. Financeiro</option>
+						    		<option>4. Tecnologia da Informação</option>
+						    	</select>
+						  	</div>
+							<div class="form-group col-lg-6">
+							  <label for="inputCargo" class="control-label">Cargo</label>
+							  <input type="text" class="form-control" id="inputCargo" placeholder="Informe o cargo que o candidato irá ocupar" ng-model="novaOportunidade.cargo">
+							</div>
+						</div>
+					  
+					  	<div class="form-group">
+					    	<label for="inputDescricao" class="control-label">Descrição</label>
+					    	<textarea row="10" class="form-control" id="inputDescricao" placeholder="Descreva a vaga, atividades e responsabilidades" ng-model="novaOportunidade.descricao"></textarea>
+					  	</div>
+					  
+					  	<div class="form-group">
+						    <label for="inputRequisitos" class="control-label">Requisitos</label>
+					    	<textarea row="10" class="form-control" id="inputRequisitos" placeholder="Formação superior, habilitação D" ng-model="novaOportunidade.requisitos"></textarea>
+					  	</div>
+					  	
+					  	<div class="form-group">
+						    <label for="inputBeneficios" class="control-label">Beneficios</label>
+						    <div class="row">
+						    	<div class="col-lg-4" style="margin-bottom:10px">
+							    	<label class="switch switch-xs switch-3d switch-primary">
+							    		<input type="checkbox" class="switch-input" checked="">
+					                    <span class="switch-label"></span>
+					                    <span class="switch-handle"></span>
+				                    </label>
+						    		Vale transporte
+						    	</div>
+						    	<div class="col-lg-4" style="margin-bottom:10px">
+							    	<label class="switch switch-xs switch-3d switch-primary">
+							    		<input type="checkbox" class="switch-input" checked="">
+					                    <span class="switch-label"></span>
+					                    <span class="switch-handle"></span>
+				                    </label>
+						    		Vale Alimentação
+						    	</div>
+						    	<div class="col-lg-4" style="margin-bottom:10px">
+							    	<label class="switch switch-xs switch-3d switch-primary">
+							    		<input type="checkbox" class="switch-input" checked="">
+					                    <span class="switch-label"></span>
+					                    <span class="switch-handle"></span>
+				                    </label>
+						    		Vale Refeicao
+						    	</div>
+						    	<div class="col-lg-4" style="margin-bottom:10px">
+							    	<label class="switch switch-xs switch-3d switch-primary">
+							    		<input type="checkbox" class="switch-input">
+					                    <span class="switch-label"></span>
+					                    <span class="switch-handle"></span>
+				                    </label>
+						    		Comissão de Vendas
+						    	</div>
+						    	<div class="col-lg-4" style="margin-bottom:10px">
+							    	<label class="switch switch-xs switch-3d switch-primary">
+							    		<input type="checkbox" class="switch-input">
+					                    <span class="switch-label"></span>
+					                    <span class="switch-handle"></span>
+				                    </label>
+						    		Auxílio Combustível
+						    	</div>
+						    	<div class="col-lg-4" style="margin-bottom:10px">
+							    	<label class="switch switch-xs switch-3d switch-primary">
+							    		<input type="checkbox" class="switch-input">
+					                    <span class="switch-label"></span>
+					                    <span class="switch-handle"></span>
+				                    </label>
+						    		Auxílio Moradia
+						    	</div>
+						    	<div class="col-lg-4" style="margin-bottom:10px">
+							    	<label class="switch switch-xs switch-3d switch-primary">
+							    		<input type="checkbox" class="switch-input" checked="">
+					                    <span class="switch-label"></span>
+					                    <span class="switch-handle"></span>
+				                    </label>
+						    		Plano de Saúde
+						    	</div>
+						    	<div class="col-lg-4" style="margin-bottom:10px">
+							    	<label class="switch switch-xs switch-3d switch-primary">
+							    		<input type="checkbox" class="switch-input" checked="">
+					                    <span class="switch-label"></span>
+					                    <span class="switch-handle"></span>
+				                    </label>
+						    		Plano de Odonto
+						    	</div>
+						    	<div class="col-lg-4" style="margin-bottom:10px">
+							    	<label class="switch switch-xs switch-3d switch-primary">
+							    		<input type="checkbox" class="switch-input" checked="">
+					                    <span class="switch-label"></span>
+					                    <span class="switch-handle"></span>
+				                    </label>
+						    		PL
+						    	</div>
+						    </div>
+					  	</div>
+					  	
+					  	<div class="row">
+					  		<div class="col-lg-6">
+						  		<div class="form-group">
+								    <label for="inputQtdVagas" class="control-label">Quantidade de vagas</label>
+							    	<input type="number" min="1" class="form-control" id="inputQtdVagas" ng-model="novaOportunidade.qtdVagas">
+							  	</div>
+					  		</div>
+					  		<div class="col-lg-6">
+						  		<div class="form-group">
+								    <label for="inputSalario" class="control-label">Salário</label>
+							    	<input type="number" class="form-control" id="inputSalario" placeholder="Informe somente números, sem vírgula" ng-model="novaOportunidade.salario">
+							  	</div>
+					  		</div>
+					  	</div>
+					  	
+					  	<button class="btn btn-danger"><i class="icon-close"></i> Cancelar</button>
+					  	<button class="btn btn-success"><i class="icon-check"></i> Salvar</button>
+				  	</form>
+				</div>
+			</div>
+		</div>
+	
