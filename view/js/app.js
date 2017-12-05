@@ -11,13 +11,15 @@ var grayLight =     '#818a91';
 var grayLighter =   '#d1d4d7';
 var grayLightest =  '#f8f9fa';
 
-angular
+var app = angular
 .module('app', [
   'ui.router',
   'oc.lazyLoad',
   'ncy-angular-breadcrumb',
   'angular-loading-bar',
-  'ngResource'
+  'ngResource',
+  'rs.oportunidade.controllers',
+  'rs.oportunidade.services'
 ])
 .config(['cfpLoadingBarProvider', function(cfpLoadingBarProvider) {
   cfpLoadingBarProvider.includeSpinner = false;
