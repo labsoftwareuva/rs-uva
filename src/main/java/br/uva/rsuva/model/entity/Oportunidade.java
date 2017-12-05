@@ -30,7 +30,7 @@ public class Oportunidade {
 	private String requisitos;
 
 	@XmlElement
-	private String beneficios;// TODO virar classe
+	private Beneficios beneficios;
 
 	@XmlElement
 	private String descricao;
@@ -100,11 +100,11 @@ public class Oportunidade {
 		this.requisitos = requisitos;
 	}
 
-	public String getBeneficios() {
+	public Beneficios getBeneficios() {
 		return beneficios;
 	}
 
-	public void setBeneficios(String beneficios) {
+	public void setBeneficios(Beneficios beneficios) {
 		this.beneficios = beneficios;
 	}
 
