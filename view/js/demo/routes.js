@@ -139,25 +139,17 @@ angular
   })
   
   .state('app.oportunidade', {
-    url: '/oportunidade/',
+    url: '/oportunidade',
     templateUrl: 'views/oportunidade/oportunidades.html',
     controller: 'OportunidadeController',
     ncyBreadcrumb: {
       label: 'Oportunidades'
     }
   })
-  .state('app.oportunidade-view', {
-    url: '/oportunidade/:id/view',
-    templateUrl: 'views/oportunidade/oportunidade-view.html',
-    controller: 'OportunidadeViewController',
-    ncyBreadcrumb: {
-        label: 'Detalhes'
-	}
-  })
   .state('app.oportunidade-add', {
-    url: '/movies/new',
-    templateUrl: 'views/oportunidade/oportunidade-add.html',
-    controller: 'OportuniaddeCreateController',
+    url: '/oportunidade/new',
+    templateUrl: 'views/oportunidade/oportunidade-edit.html',
+    controller: 'OportunidadeEditController',
     ncyBreadcrumb: {
     	label: 'Nova Oportunidade'
 	}
@@ -168,6 +160,14 @@ angular
     controller: 'OportunidadeEditController',
     ncyBreadcrumb: {
         label: 'Editar Oportunidade'
+	}
+  })
+  .state('app.oportunidade-delete', {
+    url: '/oportunidade/:id/edit',
+    templateUrl: 'views/oportunidade/oportunidade-delete.html',
+    controller: 'OportunidadeDeleteController',
+    ncyBreadcrumb: {
+        label: 'Remover Oportunidade'
 	}
   })
   

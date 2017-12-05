@@ -18,6 +18,7 @@ var app = angular
   'ncy-angular-breadcrumb',
   'angular-loading-bar',
   'ngResource',
+  'ngRoute',
   'rs.oportunidade.controllers',
   'rs.oportunidade.services'
 ])

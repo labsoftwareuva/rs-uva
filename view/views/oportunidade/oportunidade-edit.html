@@ -1,0 +1,51 @@
+<h3>{{ title }}</h3>
+<hr />
+<form role="form" style="max-width: 500px;">
+    <strong class="error">{{ error }}</strong>
+    <div class="form-group">
+        <label for="processo">Processo seletivo:</label>
+        <input type="text" class="form-control" id="processo" ng-model="processo" />
+    </div>
+    
+    <div class="form-group">
+        <label for="areaAtuacao">Área de atuação:</label>
+        <input type="text" class="form-control" id="areaAtuacao" ng-model="areaAtuacao" />
+    </div>
+      
+    <div class="form-group">
+        <label for="cargo">Cargo:</label>
+        <input type="text" class="form-control" id="cargo" ng-model="cargo" />
+    </div>
+    <div class="form-group">
+        <label for="descricao">Descrição:</label>
+        <input type="text" class="form-control" id="descricao" ng-model="descricao" />
+    </div>
+    <div class="form-group">
+        <label for="requisitos">Requisitos:</label>
+        <input type="text" class="form-control" id="requisitos" ng-model="requisitos" />
+    </div>
+    <div class="form-group">
+        <label for="beneficios">Benefícios:</label>
+        <input type="text" class="form-control" id="beneficios" ng-model="beneficios" />
+    </div>
+    <div class="form-group">
+        <label for="qtdVagas">Vagas:</label>
+        <input type="text" class="form-control" id="qtdVagas" ng-model="qtdVagas" />
+    </div>
+    <div class="form-group">
+        <label for="dataInicial">Data inicial:</label>
+        <input type="text" class="form-control" id="dataInicial" ng-model="dataInicial" />
+    </div>
+    <div class="form-group">
+        <label for="dataInicial">Data final:</label>
+        <input type="text" class="form-control" id="dataFinal" ng-model="dataFinal" />
+    </div>
+    <div class="form-group">
+        <label for="salario">Salário:</label>
+        <input type="text" class="form-control" id="salario" ng-model="salario" />
+    </div>
+      
+    <a href="#/oportunidade" class="btn btn-info">Voltar</a>  
+    <button type="submit" class="btn btn-default" ng-click="save()">Salvar</button>
+      
+</form>  

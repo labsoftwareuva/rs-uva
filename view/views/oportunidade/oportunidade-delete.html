@@ -1,0 +1,71 @@
+<h3>Tem certeza que deseja excluir a oportunidade?</h3>  
+<hr />  
+<form class="form-horizontal" style="max-width: 500px;">
+	<div class="form-group">
+        <label class="control-label col-xs-3">Processo Seletivo:</label>
+	    <div class="col-xs-9">
+	        <p class="form-control-static">{{ processo }}</p>
+	    </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-3">Área de atuação:</label>
+        <div class="col-xs-9">
+            <p class="form-control-static">{{ areaAtuacao }}</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-3">Cargo:</label>
+	    <div class="col-xs-9">
+	        <p class="form-control-static">{{ cargo }}</p>
+	    </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-3">Descrição:</label>
+	    <div class="col-xs-9">
+	    	<p class="form-control-static">{{ descricao }}</p>
+	    </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-3">Requisitos:</label>
+        <div class="col-xs-9">
+        	<p class="form-control-static">{{ requisitos }}</p>
+       </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-3">Benefícios:</label>
+        <div class="col-xs-9">
+        	<p class="form-control-static">{{ beneficios }}</p>
+       </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-3">Vagas:</label>
+        <div class="col-xs-9">
+        	<p class="form-control-static">{{ qtdVagas }}</p>
+       </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-3">Data inicial:</label>
+        <div class="col-xs-9">
+        	<p class="form-control-static">{{ dataInicial }}</p>
+       </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-3">Data final:</label>
+        <div class="col-xs-9">
+        	<p class="form-control-static">{{ dataFinal }}</p>
+       </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-3">Salário inicial:</label>
+        <div class="col-xs-9">
+        	<p class="form-control-static">{{ salario }}</p>
+       </div>
+    </div>
+    
+    <div class="form-group">
+        <div class="col-xs-offset-3 col-xs-9 text-center">
+            <a href="#/oportunidade" class="btn btn-info">Voltar</a>
+            <button type="submit" class="btn btn-primary" ng-click="delete()">Remover</button>
+        </div>
+    </div>
+</form>
