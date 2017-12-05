@@ -36,7 +36,11 @@ main {
  
 main {
 	background-color: #eee;
-} 
+}
+
+.ng-invalid.ng-touched:not(form) {
+	border: 1px solid red;
+}
 
 figure {
   margin: 1em 40px; }
