@@ -36,8 +36,8 @@ public class OportunidadeDAOImpl implements OportunidadeDAO{
 			stmt.setString(3, String.valueOf(oportunidade.getAreaAtuacao()));
 			stmt.setString(4, oportunidade.getCargo());
 			stmt.setInt(5, oportunidade.getQtdVagas());
-			stmt.setDate(6, new java.sql.Date(oportunidade.getInicioPeriodo().getTimeInMillis()));
-			stmt.setDate(7, new java.sql.Date(oportunidade.getFimPeriodo().getTimeInMillis()));
+			stmt.setDate(6, new java.sql.Date(oportunidade.getDataInicial().getTimeInMillis()));
+			stmt.setDate(7, new java.sql.Date(oportunidade.getDataFinal().getTimeInMillis()));
 			stmt.setString(8, oportunidade.getRequisitos());
 			stmt.setDouble(9, oportunidade.getSalarioInicial());
 			stmt.setString(10, String.valueOf(oportunidade.getBeneficios()));
@@ -81,8 +81,8 @@ public class OportunidadeDAOImpl implements OportunidadeDAO{
 			stmt = conexao.prepareStatement(sbQuery.toString(), Statement.RETURN_GENERATED_KEYS);
 			stmt.setString(1, oportunidade.getCargo());
 			stmt.setInt(2, oportunidade.getQtdVagas());
-			stmt.setDate(3, new java.sql.Date(oportunidade.getInicioPeriodo().getTimeInMillis()));
-			stmt.setDate(4, new java.sql.Date(oportunidade.getFimPeriodo().getTimeInMillis()));
+			stmt.setDate(3, new java.sql.Date(oportunidade.getDataInicial().getTimeInMillis()));
+			stmt.setDate(4, new java.sql.Date(oportunidade.getDataFinal().getTimeInMillis()));
 			stmt.setString(5, oportunidade.getRequisitos());
 			stmt.setDouble(6, oportunidade.getSalarioInicial());
 			stmt.setString(7, String.valueOf(oportunidade.getBeneficios()));
@@ -168,10 +168,10 @@ public class OportunidadeDAOImpl implements OportunidadeDAO{
 		    	oportunidade.setQtdVagas(rs.getInt("QTD_VAGAS"));
 		    	GregorianCalendar dataInicio = new GregorianCalendar();
 		    	dataInicio.setTime(rs.getDate("DATA_INICIO"));
-		    	oportunidade.setInicioPeriodo(dataInicio);
+		    	oportunidade.setDataInicial(dataInicio);
 		    	GregorianCalendar dataFim = new GregorianCalendar();
 		    	dataFim.setTime(rs.getDate("DATA_TERMINO"));
-		    	oportunidade.setFimPeriodo(dataFim);
+		    	oportunidade.setDataFinal(dataFim);
 		    	oportunidade.setRequisitos(rs.getString("REQUISITOS"));
 		    	oportunidade.setSalarioInicial(rs.getInt("SALARIO_INICIAL"));
 		    	oportunidade.setBeneficios(rs.getString("BENEFICIOS"));
@@ -221,10 +221,10 @@ public class OportunidadeDAOImpl implements OportunidadeDAO{
 	    	oportunidade.setQtdVagas(rs.getInt("QTD_VAGAS"));
 	    	GregorianCalendar dataInicio = new GregorianCalendar();
 	    	dataInicio.setTime(rs.getDate("DATA_INICIO"));
-	    	oportunidade.setInicioPeriodo(dataInicio);
+	    	oportunidade.setDataInicial(dataInicio);
 	    	GregorianCalendar dataFim = new GregorianCalendar();
 	    	dataFim.setTime(rs.getDate("DATA_TERMINO"));
-	    	oportunidade.setFimPeriodo(dataFim);
+	    	oportunidade.setDataFinal(dataFim);
 	    	oportunidade.setRequisitos(rs.getString("REQUISITOS"));
 	    	oportunidade.setSalarioInicial(rs.getInt("SALARIO_INICIAL"));
 	    	oportunidade.setBeneficios(rs.getString("BENEFICIOS"));

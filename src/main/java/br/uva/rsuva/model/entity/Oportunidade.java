@@ -2,135 +2,134 @@ package br.uva.rsuva.model.entity;
 
 import java.util.GregorianCalendar;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class Oportunidade {
-	
+
+	@XmlElement
 	private int id;
+
+	@XmlElement(name = "processo")
 	private int idProcesso;
+
+	@XmlElement
 	private int qtdVagas;
+
+	@XmlElement
 	private double salarioInicial;
+
+	@XmlElement
 	private String areaAtuacao;
+
+	@XmlElement
 	private String cargo;
+
+	@XmlElement
 	private String requisitos;
-	private String beneficios;
-	private GregorianCalendar inicioPeriodo;
-	private GregorianCalendar fimPeriodo;
-	
-	
+
+	@XmlElement
+	private Beneficios beneficios;
+
+	@XmlElement
+	private String descricao;
+
+	@XmlElement
+	private GregorianCalendar dataInicial;
+
+	@XmlElement
+	private GregorianCalendar dataFinal;
+
 	public Oportunidade() {
 	}
-	
-	public Oportunidade(int id, int idProcesso, int qtdVagas, double salarioInicial, String areaAtuacao, String cargo,
-			String requisitos, String beneficios, GregorianCalendar inicioPeriodo, GregorianCalendar fimPeriodo) {
-		super();
-		this.id = id;
-		this.idProcesso = idProcesso;
-		this.qtdVagas = qtdVagas;
-		this.salarioInicial = salarioInicial;
-		this.areaAtuacao = areaAtuacao;
-		this.cargo = cargo;
-		this.requisitos = requisitos;
-		this.beneficios = beneficios;
-		this.inicioPeriodo = inicioPeriodo;
-		this.fimPeriodo = fimPeriodo;
-	}
-
 
 	public int getId() {
 		return id;
 	}
 
-
 	public void setId(int id) {
 		this.id = id;
 	}
-
 
 	public int getIdProcesso() {
 		return idProcesso;
 	}
 
-
 	public void setIdProcesso(int idProcesso) {
 		this.idProcesso = idProcesso;
 	}
-
 
 	public int getQtdVagas() {
 		return qtdVagas;
 	}
 
-
 	public void setQtdVagas(int qtdVagas) {
 		this.qtdVagas = qtdVagas;
 	}
-
 
 	public double getSalarioInicial() {
 		return salarioInicial;
 	}
 
-
 	public void setSalarioInicial(double salarioInicial) {
 		this.salarioInicial = salarioInicial;
 	}
-
 
 	public String getAreaAtuacao() {
 		return areaAtuacao;
 	}
 
-
 	public void setAreaAtuacao(String areaAtuacao) {
 		this.areaAtuacao = areaAtuacao;
 	}
-
 
 	public String getCargo() {
 		return cargo;
 	}
 
-
 	public void setCargo(String cargo) {
 		this.cargo = cargo;
 	}
-
 
 	public String getRequisitos() {
 		return requisitos;
 	}
 
-
 	public void setRequisitos(String requisitos) {
 		this.requisitos = requisitos;
 	}
 
-
-	public String getBeneficios() {
+	public Beneficios getBeneficios() {
 		return beneficios;
 	}
 
-
-	public void setBeneficios(String beneficios) {
+	public void setBeneficios(Beneficios beneficios) {
 		this.beneficios = beneficios;
 	}
 
-
-	public GregorianCalendar getInicioPeriodo() {
-		return inicioPeriodo;
+	public GregorianCalendar getDataInicial() {
+		return dataInicial;
 	}
 
-
-	public void setInicioPeriodo(GregorianCalendar inicioPeriodo) {
-		this.inicioPeriodo = inicioPeriodo;
+	public void setDataInicial(GregorianCalendar dataInicial) {
+		this.dataInicial = dataInicial;
 	}
 
-
-	public GregorianCalendar getFimPeriodo() {
-		return fimPeriodo;
+	public GregorianCalendar getDataFinal() {
+		return dataFinal;
 	}
 
-
-	public void setFimPeriodo(GregorianCalendar fimPeriodo) {
-		this.fimPeriodo = fimPeriodo;
+	public void setDataFinal(GregorianCalendar dataFinal) {
+		this.dataFinal = dataFinal;
 	}
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+
 }
