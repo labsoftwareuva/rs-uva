@@ -12,6 +12,7 @@ import java.util.List;
 import br.uva.rsuva.model.dao.OportunidadeDAO;
 import br.uva.rsuva.model.dao.ConnectionFactory;
 import br.uva.rsuva.model.entity.Oportunidade;
+import br.uva.rsuva.utils.ParseUtils;
 
 public class OportunidadeDAOImpl implements OportunidadeDAO{
 	
@@ -174,7 +175,7 @@ public class OportunidadeDAOImpl implements OportunidadeDAO{
 		    	oportunidade.setDataFinal(dataFim);
 		    	oportunidade.setRequisitos(rs.getString("REQUISITOS"));
 		    	oportunidade.setSalarioInicial(rs.getInt("SALARIO_INICIAL"));
-		    	oportunidade.setBeneficios(rs.getString("BENEFICIOS"));
+		    	oportunidade.setBeneficios(ParseUtils.buildBeneficios(rs.getString("BENEFICIOS")));
 		    	oportunidades.add(oportunidade);
 		    }
 		    stmt.close();
@@ -227,7 +228,7 @@ public class OportunidadeDAOImpl implements OportunidadeDAO{
 	    	oportunidade.setDataFinal(dataFim);
 	    	oportunidade.setRequisitos(rs.getString("REQUISITOS"));
 	    	oportunidade.setSalarioInicial(rs.getInt("SALARIO_INICIAL"));
-	    	oportunidade.setBeneficios(rs.getString("BENEFICIOS"));
+	    	oportunidade.setBeneficios(ParseUtils.buildBeneficios(rs.getString("BENEFICIOS")));
 
 		    stmt.close();
 		    conexao.close();

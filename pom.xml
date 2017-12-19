@@ -69,18 +69,7 @@
 		    <artifactId>jersey-bean-validation</artifactId>
 		    <version>${jersey2.version}</version>
 		</dependency>
-		<!-- libreria Jackson para JSON -->
-		<dependency>
-		    <groupId>org.glassfish.jersey.media</groupId>
-		    <artifactId>jersey-media-json-jackson</artifactId>
-		    <version>${jersey2.version}</version>
-		</dependency> 
-		<!-- log4j -->
-		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>${log4j.version}</version>
-		</dependency>
+		
 		<dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
@@ -112,8 +101,8 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.1</version>
 				<configuration>
-					<source>1.7</source>
-					<target>1.7</target>
+					<source>1.8</source>
+					<target>1.8</target>
 				</configuration>
 			</plugin>
 			<!-- <plugin>

@@ -1,13 +1,30 @@
 package br.uva.rsuva.model.entity;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class Beneficios {
 
+	@XmlElement
 	private boolean valeTransporte;
+	
+	@XmlElement
 	private boolean valeAlimentacao;
+	
+	@XmlElement
 	private boolean valeRefeicao;
+	
+	@XmlElement
 	private boolean comissaoDeVendas;
+	
+	@XmlElement
 	private boolean auxilioCombustivel;
+	
+	@XmlElement
 	private boolean auxilioMoradia;
+	
+	@XmlElement
 	private boolean planoDeSaude;
 
 	public Beneficios() {
